@@ -11,7 +11,9 @@ namespace L2P_LTD
     public partial class L2PLTDForm : Form
     {
         private decimal SummaryTransactionValue, SummaryLodgingValue, SummaryEnrollmentValue;
+        private decimal TripCost;
         private int TotalNumberBookings, TotalNumberBookingsDiscount, GuestCount;
+        private string CourseSelected, VenueSelected, SuiteSelected;
 
         public L2PLTDForm()
         {
@@ -65,14 +67,13 @@ namespace L2P_LTD
             const decimal DiscountRate = 0.075m;
 
             // now variables we will track and are changeable
-            decimal TripCost = 0.00m;
+            //decimal TripCost = 0.00m;
             decimal PriceReduction = 0.00m;
             decimal OptionalCosts = 0.00m;
 
             int CourseIndex = 0, VenueIndex = 0, CourseLength = 0;
-            decimal CourseSelectedPrice = 0.00m, VenueSelectedPrice = 0.00m, LodgingCost = 0.00m,
-                CourseFees = 0.00m;
-            string CourseSelected = "", VenueSelected = "", SuiteSelected = "";
+            decimal CourseSelectedPrice = 0.00m, VenueSelectedPrice = 0.00m,
+            LodgingCost = 0.00m, CourseFees = 0.00m, SuiteFees = 0.00m;
 
             if (ListBoxCourse.SelectedIndex != -1)
             {
@@ -113,21 +114,22 @@ namespace L2P_LTD
                     if (MasterSuiteRadioButton.Checked)
                     {
                         SuiteSelected = "Master Suite";
-                        LodgingCost += MasterSuiteCost * CourseLength;
+                        SuiteFees += MasterSuiteCost * CourseLength;
                     }
                     else if (ExecutiveRadioButton.Checked)
                     {
                         SuiteSelected = "Executive Suite";
-                        LodgingCost += ExecutiveSuiteCost * CourseLength;
+                        SuiteFees += ExecutiveSuiteCost * CourseLength;
                     }
                     else if (JuniorSuiteRadioButton.Checked)
                     {
                         SuiteSelected = "Junior Suite";
-                        LodgingCost += JuniorSuiteCost * CourseLength;
+                        SuiteFees += JuniorSuiteCost * CourseLength;
                     }
                     else if (StandardRadioButton.Checked)
                     {
                         SuiteSelected = "Standard Suite";
+                        SuiteFees = 0.00m;
                     }
 
                     // User input is validated against negative and decimals.
@@ -147,7 +149,7 @@ namespace L2P_LTD
 
                     LodgingCost += VenueSelectedPrice * CourseLength;
                     CourseFees = CourseSelectedPrice * GuestCount;
-                    TripCost = CourseFees + LodgingCost + OptionalCosts;
+                    TripCost = CourseFees + LodgingCost + OptionalCosts + SuiteFees;
 
                     // apply discounts
                     if (GuestCount >= 3 && SuiteSelected != "Standard Suite")
@@ -162,13 +164,25 @@ namespace L2P_LTD
                         TripCost = TripCost;
                     }
 
-                    SummaryLodgingValue += LodgingCost;
-                    SummaryTransactionValue += TripCost;
-                    TotalNumberBookings += 1;
+                    this.CourseGroupBox.Visible = false;
+                    this.VenueGroupBox.Visible = false;
+                    this.CertificateGroupBox.Visible = false;
+                    this.GroupBoxUpgrades.Visible = false;
+                    this.DisplayGroupBox.Visible = true;
+                    this.Text = "Booking Overview";
 
-                    MessageBox.Show("Your Total Trip Cost is: " + "€" + 
-                        TripCost.ToString("0.00"), "Info",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.TextBoxGuestsDisplay.Text = GuestCount.ToString();
+                    this.TextBoxCourseSelectedDisplay.Text = CourseSelected;
+                    this.TextBoxCourseFeesDisplay.Text = "€" + CourseFees.ToString("0.00");
+                    this.TextBoxVenueSelectedDisplay.Text = VenueSelected;
+                    this.TextBoxVenueFeesDisplay.Text = "€" + LodgingCost.ToString("0.00");
+                    this.TextBoxSuiteSelectedDisplay.Text = SuiteSelected;
+                    this.TextBoxSuiteFeesDisplay.Text = "€" + SuiteFees.ToString("0.00");
+                    this.TextBoxCertificateFeesDisplay.Text = "€" + OptionalCosts.ToString("0.00");
+                    this.TextBoxDiscountDisplay.Text = "€" + PriceReduction.ToString("0.00");
+                    this.TextBoxTotalBookingDisplay.Text = "€" + TripCost.ToString("0.00");
+
+                    BookButton.Focus();
 
                 }
                 else
@@ -183,6 +197,22 @@ namespace L2P_LTD
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void BookButton_Click(object sender, EventArgs e)
+        {
+            // message box to confirm booking
+            MessageBox.Show("Your booking was Successful." +
+               "\nThe Course Selected is: " + CourseSelected +
+               "\nVenue Selected is: " + VenueSelected +
+               "\nNumber of Guests are: " + GuestCount.ToString() +
+               "\nBooking Cost was: €" + TripCost.ToString(), "Booking Successful", MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
+
+            // add summary stats
+            //SummaryLodgingValue += LodgingCost;
+            SummaryTransactionValue += TripCost;
+            TotalNumberBookings += 1;
         }
 
         private void Exit_Click(object sender, EventArgs e)
