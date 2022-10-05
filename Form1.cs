@@ -10,10 +10,14 @@ namespace L2P_LTD
 {
     public partial class L2PLTDForm : Form
     {
-        private decimal SummaryTransactionValue, SummaryLodgingValue, SummaryEnrollmentValue;
-        private decimal TripCost;
+        private decimal SummaryTransactionValue, SummaryLodgingValue, SummaryEnrollmentValue,
+            SummaryCertCosts;
+        private decimal TripCost, AverageRevenueTrip, PriceReduction, OptionalCosts;
         private int TotalNumberBookings, TotalNumberBookingsDiscount, GuestCount;
         private string CourseSelected, VenueSelected, SuiteSelected;
+
+        private decimal CourseSelectedPrice, VenueSelectedPrice,
+            LodgingCost, CourseFees, SuiteFees;
 
         public L2PLTDForm()
         {
@@ -66,72 +70,22 @@ namespace L2P_LTD
             // discount for three or more guests and special room
             const decimal DiscountRate = 0.075m;
 
-            // now variables we will track and are changeable
-            //decimal TripCost = 0.00m;
-            decimal PriceReduction = 0.00m;
-            decimal OptionalCosts = 0.00m;
+            // reset values if previous display / booking occurred
+            PriceReduction = 0.00m;
+            OptionalCosts = 0.00m;
 
             int CourseIndex = 0, VenueIndex = 0, CourseLength = 0;
-            decimal CourseSelectedPrice = 0.00m, VenueSelectedPrice = 0.00m,
-            LodgingCost = 0.00m, CourseFees = 0.00m, SuiteFees = 0.00m;
+
+            CourseSelectedPrice = 0.00m;
+            VenueSelectedPrice = 0.00m;
+            LodgingCost = 0.00m;
+            CourseFees = 0.00m;
+            SuiteFees = 0.00m;
 
             if (ListBoxCourse.SelectedIndex != -1)
-            {
-                
+            {   
                 if(ListBoxVenue.SelectedIndex != -1)
                 {
-                    CourseIndex = ListBoxCourse.SelectedIndex;
-                    VenueIndex = ListBoxVenue.SelectedIndex;
-
-                    switch (CourseIndex)
-                    {
-                        case 0: CourseSelected = "C# Fundamentals"; CourseLength = FundamentalsLength;
-                            CourseSelectedPrice = FundamentalsFee; break;
-                        case 1: CourseSelected = "C# Basics for Beginners"; CourseLength = BasicsLength;
-                            CourseSelectedPrice = BasicsFee; break;
-                        case 2: CourseSelected = "C# Intermediate"; CourseLength = IntermediateLength;
-                            CourseSelectedPrice = IntermediateFee; break;
-                        case 3: CourseSelected = "C# Advanced Topics"; CourseLength = AdvancedLength;
-                            CourseSelectedPrice = AdvancedFee; break;
-                        case 4: CourseSelected = "ASP.Net with C# Part A"; CourseLength = ASPPartALength;
-                            CourseSelectedPrice = ASPPartAFee; break;
-                        case 5: CourseSelected = "ASP.Net with C# Part B"; CourseLength = ASPPartBLength;
-                            CourseSelectedPrice = ASPPartBFee; break;
-                    }
-
-                    switch (VenueIndex)
-                    {
-                        case 0: VenueSelected = Venue1; VenueSelectedPrice = BelmulletNight; break;
-                        case 1: VenueSelected = Venue2; VenueSelectedPrice = ClifdenNight; break;
-                        case 2: VenueSelected = Venue3; VenueSelectedPrice = CorkNight; break;
-                        case 3: VenueSelected = Venue4; VenueSelectedPrice = DublinNight; break;
-                        case 4: VenueSelected = Venue5; VenueSelectedPrice = KillarneyNight; break;
-                        case 5: VenueSelected = Venue6; VenueSelectedPrice = LetterkennyNight; break;
-                        case 6: VenueSelected = Venue7; VenueSelectedPrice = SligoNight; break;
-                    }
-
-                    // check for user upgrading suite or not
-                    if (MasterSuiteRadioButton.Checked)
-                    {
-                        SuiteSelected = "Master Suite";
-                        SuiteFees += MasterSuiteCost * CourseLength;
-                    }
-                    else if (ExecutiveRadioButton.Checked)
-                    {
-                        SuiteSelected = "Executive Suite";
-                        SuiteFees += ExecutiveSuiteCost * CourseLength;
-                    }
-                    else if (JuniorSuiteRadioButton.Checked)
-                    {
-                        SuiteSelected = "Junior Suite";
-                        SuiteFees += JuniorSuiteCost * CourseLength;
-                    }
-                    else if (StandardRadioButton.Checked)
-                    {
-                        SuiteSelected = "Standard Suite";
-                        SuiteFees = 0.00m;
-                    }
-
                     // User input is validated against negative and decimals.
                     if (!int.TryParse(GuestTextBox.Text, out GuestCount) ||
                          GuestCount <= 0)
@@ -141,48 +95,104 @@ namespace L2P_LTD
                             "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         GuestTextBox.Focus();
                     }
-
-                    if (CheckBoxCertificate.Checked)
-                    {
-                        OptionalCosts += DigitalCert * GuestCount;
-                    }
-
-                    LodgingCost += VenueSelectedPrice * CourseLength;
-                    CourseFees = CourseSelectedPrice * GuestCount;
-                    TripCost = CourseFees + LodgingCost + OptionalCosts + SuiteFees;
-
-                    // apply discounts
-                    if (GuestCount >= 3 && SuiteSelected != "Standard Suite")
-                    {
-                        PriceReduction = TripCost * DiscountRate;
-                        TripCost = TripCost - PriceReduction;
-                        TotalNumberBookingsDiscount += 1;
-                    }
                     else
                     {
-                        PriceReduction = PriceReduction;
-                        TripCost = TripCost;
+                        CourseIndex = ListBoxCourse.SelectedIndex;
+                        VenueIndex = ListBoxVenue.SelectedIndex;
+
+                        switch (CourseIndex)
+                        {
+                            case 0:
+                                CourseSelected = "C# Fundamentals"; CourseLength = FundamentalsLength;
+                                CourseSelectedPrice = FundamentalsFee; break;
+                            case 1:
+                                CourseSelected = "C# Basics for Beginners"; CourseLength = BasicsLength;
+                                CourseSelectedPrice = BasicsFee; break;
+                            case 2:
+                                CourseSelected = "C# Intermediate"; CourseLength = IntermediateLength;
+                                CourseSelectedPrice = IntermediateFee; break;
+                            case 3:
+                                CourseSelected = "C# Advanced Topics"; CourseLength = AdvancedLength;
+                                CourseSelectedPrice = AdvancedFee; break;
+                            case 4:
+                                CourseSelected = "ASP.Net with C# Part A"; CourseLength = ASPPartALength;
+                                CourseSelectedPrice = ASPPartAFee; break;
+                            case 5:
+                                CourseSelected = "ASP.Net with C# Part B"; CourseLength = ASPPartBLength;
+                                CourseSelectedPrice = ASPPartBFee; break;
+                        }
+
+                        switch (VenueIndex)
+                        {
+                            case 0: VenueSelected = Venue1; VenueSelectedPrice = BelmulletNight; break;
+                            case 1: VenueSelected = Venue2; VenueSelectedPrice = ClifdenNight; break;
+                            case 2: VenueSelected = Venue3; VenueSelectedPrice = CorkNight; break;
+                            case 3: VenueSelected = Venue4; VenueSelectedPrice = DublinNight; break;
+                            case 4: VenueSelected = Venue5; VenueSelectedPrice = KillarneyNight; break;
+                            case 5: VenueSelected = Venue6; VenueSelectedPrice = LetterkennyNight; break;
+                            case 6: VenueSelected = Venue7; VenueSelectedPrice = SligoNight; break;
+                        }
+
+                        // check for user upgrading suite or not
+                        if (MasterSuiteRadioButton.Checked)
+                        {
+                            SuiteSelected = "Master Suite";
+                            SuiteFees += MasterSuiteCost * CourseLength;
+                        }
+                        else if (ExecutiveRadioButton.Checked)
+                        {
+                            SuiteSelected = "Executive Suite";
+                            SuiteFees += ExecutiveSuiteCost * CourseLength;
+                        }
+                        else if (JuniorSuiteRadioButton.Checked)
+                        {
+                            SuiteSelected = "Junior Suite";
+                            SuiteFees += JuniorSuiteCost * CourseLength;
+                        }
+                        else if (StandardRadioButton.Checked)
+                        {
+                            SuiteSelected = "Standard Suite";
+                            SuiteFees = 0.00m;
+                        }
+
+                        if (CheckBoxCertificate.Checked)
+                        {
+                            OptionalCosts += DigitalCert * GuestCount;
+                        }
+
+                        LodgingCost += VenueSelectedPrice * CourseLength;
+                        CourseFees = CourseSelectedPrice * GuestCount;
+
+                        // overall trip cost
+                        TripCost = CourseFees + LodgingCost + OptionalCosts + SuiteFees;
+
+                        // apply discounts
+                        if (GuestCount >= 3 && SuiteSelected != "Standard Suite")
+                        {
+                            PriceReduction = TripCost * DiscountRate;
+                            TripCost = TripCost - PriceReduction;
+                        }
+
+                        this.CourseGroupBox.Visible = false;
+                        this.VenueGroupBox.Visible = false;
+                        this.CertificateGroupBox.Visible = false;
+                        this.GroupBoxUpgrades.Visible = false;
+                        this.DisplayGroupBox.Visible = true;
+                        this.Text = "Booking Overview";
+
+                        this.TextBoxGuestsDisplay.Text = GuestCount.ToString();
+                        this.TextBoxCourseSelectedDisplay.Text = CourseSelected;
+                        this.TextBoxCourseFeesDisplay.Text = "€" + CourseFees.ToString("0.00");
+                        this.TextBoxVenueSelectedDisplay.Text = VenueSelected;
+                        this.TextBoxVenueFeesDisplay.Text = "€" + LodgingCost.ToString("0.00");
+                        this.TextBoxSuiteSelectedDisplay.Text = SuiteSelected;
+                        this.TextBoxSuiteFeesDisplay.Text = "€" + SuiteFees.ToString("0.00");
+                        this.TextBoxCertificateFeesDisplay.Text = "€" + OptionalCosts.ToString("0.00");
+                        this.TextBoxDiscountDisplay.Text = "€" + PriceReduction.ToString("0.00");
+                        this.TextBoxTotalBookingDisplay.Text = "€" + TripCost.ToString("0.00");
+
+                        BookButton.Focus();
                     }
-
-                    this.CourseGroupBox.Visible = false;
-                    this.VenueGroupBox.Visible = false;
-                    this.CertificateGroupBox.Visible = false;
-                    this.GroupBoxUpgrades.Visible = false;
-                    this.DisplayGroupBox.Visible = true;
-                    this.Text = "Booking Overview";
-
-                    this.TextBoxGuestsDisplay.Text = GuestCount.ToString();
-                    this.TextBoxCourseSelectedDisplay.Text = CourseSelected;
-                    this.TextBoxCourseFeesDisplay.Text = "€" + CourseFees.ToString("0.00");
-                    this.TextBoxVenueSelectedDisplay.Text = VenueSelected;
-                    this.TextBoxVenueFeesDisplay.Text = "€" + LodgingCost.ToString("0.00");
-                    this.TextBoxSuiteSelectedDisplay.Text = SuiteSelected;
-                    this.TextBoxSuiteFeesDisplay.Text = "€" + SuiteFees.ToString("0.00");
-                    this.TextBoxCertificateFeesDisplay.Text = "€" + OptionalCosts.ToString("0.00");
-                    this.TextBoxDiscountDisplay.Text = "€" + PriceReduction.ToString("0.00");
-                    this.TextBoxTotalBookingDisplay.Text = "€" + TripCost.ToString("0.00");
-
-                    BookButton.Focus();
 
                 }
                 else
@@ -210,9 +220,62 @@ namespace L2P_LTD
                MessageBoxIcon.Information);
 
             // add summary stats
-            //SummaryLodgingValue += LodgingCost;
             SummaryTransactionValue += TripCost;
+            SummaryLodgingValue += LodgingCost;
+            SummaryEnrollmentValue += CourseFees;
+            SummaryCertCosts += OptionalCosts;
             TotalNumberBookings += 1;
+
+            if(PriceReduction > 0)
+            {
+                TotalNumberBookingsDiscount += 1;
+            }
+        }
+
+        private void SummaryButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(TotalNumberBookings > 0)
+                {
+                    this.SummaryGroupBox.Visible = true;
+                    this.DisplayGroupBox.Visible = false;
+                    this.TotalSummaryTranasctionsTextBox.Text = TotalNumberBookings.ToString();
+                    this.TotalSummarySalesTextBox.Text = "€" + SummaryTransactionValue.ToString();
+                    this.TotalEnrollmentFeesTextBox.Text = "€" + SummaryEnrollmentValue.ToString();
+                    this.TotalLodgingFeesTextBox.Text = "€" + SummaryLodgingValue.ToString();
+                    AverageRevenueTrip = SummaryTransactionValue / TotalNumberBookings;
+                    this.AverageRevenueSummaryTextBox.Text = "€" + AverageRevenueTrip.ToString("0.00");
+                    this.TotalDiscountedTextBox.Text = TotalNumberBookingsDiscount.ToString();
+                    this.CertificateSummaryTextBox.Text = "€" + SummaryCertCosts.ToString();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("There are no transactions to show." +
+                            "\nPlease ensure there transactions made.",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+          
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            this.SummaryGroupBox.Visible = false;
+            this.DisplayGroupBox.Visible = false;
+            this.CourseGroupBox.Visible = true;
+            this.VenueGroupBox.Visible = true;
+            this.CertificateGroupBox.Visible = true;
+            this.GroupBoxUpgrades.Visible = true;
+            this.GuestTextBox.Text = "0";
+            this.ListBoxVenue.SelectedIndex = -1;
+            this.ListBoxCourse.SelectedIndex = -1;
+            this.CheckBoxCertificate.Checked = false;
+            // radio buttons
+            this.StandardRadioButton.Checked = true;
+            this.ExecutiveRadioButton.Checked = false;
+            this.JuniorSuiteRadioButton.Checked = false;
+            this.MasterSuiteRadioButton.Checked = false;
         }
 
         private void Exit_Click(object sender, EventArgs e)
