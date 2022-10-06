@@ -843,8 +843,8 @@
             this.DiscountLabelInformation.Name = "DiscountLabelInformation";
             this.DiscountLabelInformation.Size = new System.Drawing.Size(319, 75);
             this.DiscountLabelInformation.TabIndex = 7;
-            this.DiscountLabelInformation.Text = "7.5% Discount applies for courses with\r\n 3 or more participants that avail of \r\na" +
-    "n upgraded suite.";
+            this.DiscountLabelInformation.Text = "7.5% Discount applies for courses with\r\n 3 or more attendees that avail of \r\nan u" +
+    "pgraded suite.";
             // 
             // L2PLTDForm
             // 
