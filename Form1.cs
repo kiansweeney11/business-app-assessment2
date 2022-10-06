@@ -14,10 +14,10 @@ namespace L2P_LTD
     {
         // decimal values global for historical company summary and book button
         private decimal SummaryTransactionValue, SummaryLodgingValue, SummaryEnrollmentValue,
-            LodgingCost, CourseFees, SuiteFees, TotalOptionalCosts;
+            LodgingCost, CourseFees, SuiteFees, TotalOptionalCosts, TripCost, PriceReduction, 
+            OptionalCertCosts;
+        // global integer values - booking related and guest count
         private int TotalNumberBookings, TotalNumberBookingsDiscount, GuestCount;
-        // values needed for book button calculations
-        private decimal TripCost, PriceReduction, OptionalCertCosts;
         // strings need to be global for book button
         private string CourseSelected, VenueSelected, SuiteSelected;
 
@@ -229,7 +229,7 @@ namespace L2P_LTD
                "\nThe Course Selected is: " + CourseSelected +
                "\nVenue Selected is: " + VenueSelected +
                "\nNumber of Attendees are: " + GuestCount.ToString() +
-               "\nBooking Cost was: " + TripCost.ToString("C"), "Confirm Booking?", MessageBoxButtons.OKCancel,
+               "\nBooking Cost is: " + TripCost.ToString("C"), "Confirm Booking?", MessageBoxButtons.OKCancel,
                MessageBoxIcon.Information);
 
             // If the OK button pressed
