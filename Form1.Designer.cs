@@ -84,47 +84,14 @@
             this.layCourseSelectedLabelDispa = new System.Windows.Forms.Label();
             this.CourseFeesLabelDisplay = new System.Windows.Forms.Label();
             this.SummaryGroupBox = new System.Windows.Forms.GroupBox();
-            this.JuniorSummaryTextBox = new System.Windows.Forms.TextBox();
-            this.ExecutiveSummaryTextBox = new System.Windows.Forms.TextBox();
-            this.MasterSummaryTextBox = new System.Windows.Forms.TextBox();
-            this.SligoSummaryTextBox = new System.Windows.Forms.TextBox();
-            this.LetterkennySummaryTextBox = new System.Windows.Forms.TextBox();
-            this.KillarneySummaryTextBox = new System.Windows.Forms.TextBox();
-            this.DublinSummaryTextBox = new System.Windows.Forms.TextBox();
-            this.CorkSummaryTextBox = new System.Windows.Forms.TextBox();
             this.CertificateSummaryTextBox = new System.Windows.Forms.TextBox();
-            this.ClifdenSummaryTextBox = new System.Windows.Forms.TextBox();
-            this.BelmulletSummaryTextBox = new System.Windows.Forms.TextBox();
-            this.ASPBSummaryTextBox = new System.Windows.Forms.TextBox();
-            this.ASPASummaryTextBox = new System.Windows.Forms.TextBox();
-            this.AdvancedSummaryTextBox = new System.Windows.Forms.TextBox();
-            this.IntermediateSummaryTextBox = new System.Windows.Forms.TextBox();
-            this.BasicsSummaryTextBox = new System.Windows.Forms.TextBox();
-            this.FundamentalsCostTextBox = new System.Windows.Forms.TextBox();
-            this.TotalJuniorSummaryLabel = new System.Windows.Forms.Label();
-            this.TotalExecutiveSummaryLabel = new System.Windows.Forms.Label();
-            this.TotalMasterSuiteSummaryLabel = new System.Windows.Forms.Label();
             this.DigitalCertSummaryLabel = new System.Windows.Forms.Label();
-            this.TotalSligoSummaryLabel = new System.Windows.Forms.Label();
-            this.TotalLetterkennySummaryLabel = new System.Windows.Forms.Label();
-            this.TotalKillarneySummaryLabel = new System.Windows.Forms.Label();
-            this.TotalDublinSummaryLabel = new System.Windows.Forms.Label();
-            this.TotalCorkSummaryLabel = new System.Windows.Forms.Label();
-            this.TotalClifdenSummaryLabel = new System.Windows.Forms.Label();
-            this.BelmulletSummaryLabel = new System.Windows.Forms.Label();
-            this.ASPPartBSummaryLabel = new System.Windows.Forms.Label();
-            this.ASPPartASummaryLabel = new System.Windows.Forms.Label();
-            this.AdvancedSummaryLabel = new System.Windows.Forms.Label();
-            this.IntermediateSummaryLabel = new System.Windows.Forms.Label();
-            this.TotalBasicsSummaryLabel = new System.Windows.Forms.Label();
-            this.TotalFundamentalsSummaryLabel = new System.Windows.Forms.Label();
             this.TotalDiscountedTextBox = new System.Windows.Forms.TextBox();
             this.TotalEnrollmentFeesTextBox = new System.Windows.Forms.TextBox();
             this.AverageRevenueSummaryTextBox = new System.Windows.Forms.TextBox();
             this.TotalLodgingFeesTextBox = new System.Windows.Forms.TextBox();
             this.TotalSummarySalesTextBox = new System.Windows.Forms.TextBox();
             this.TotalSummaryTranasctionsTextBox = new System.Windows.Forms.TextBox();
-            this.SpecificLabelSummary = new System.Windows.Forms.Label();
             this.AverageBookingSummaryLabel = new System.Windows.Forms.Label();
             this.NumberDiscountedBookingsLabel = new System.Windows.Forms.Label();
             this.LodgingFeesSummaryLabel = new System.Windows.Forms.Label();
@@ -132,6 +99,8 @@
             this.TotalSalesLabelSummary = new System.Windows.Forms.Label();
             this.NumberTransactionsSummary = new System.Windows.Forms.Label();
             this.TransactionCountSummary = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.DiscountLabelInformation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DefaultPictureBox)).BeginInit();
             this.StartPanel.SuspendLayout();
             this.CourseGroupBox.SuspendLayout();
@@ -140,14 +109,15 @@
             this.CertificateGroupBox.SuspendLayout();
             this.DisplayGroupBox.SuspendLayout();
             this.SummaryGroupBox.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DefaultPictureBox
             // 
             this.DefaultPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("DefaultPictureBox.Image")));
-            this.DefaultPictureBox.Location = new System.Drawing.Point(232, 571);
+            this.DefaultPictureBox.Location = new System.Drawing.Point(789, 192);
             this.DefaultPictureBox.Name = "DefaultPictureBox";
-            this.DefaultPictureBox.Size = new System.Drawing.Size(337, 123);
+            this.DefaultPictureBox.Size = new System.Drawing.Size(331, 193);
             this.DefaultPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.DefaultPictureBox.TabIndex = 0;
             this.DefaultPictureBox.TabStop = false;
@@ -157,14 +127,14 @@
             this.StartPanel.BackColor = System.Drawing.SystemColors.Window;
             this.StartPanel.Controls.Add(this.GuestTextBox);
             this.StartPanel.Controls.Add(this.StartMenuLabel);
-            this.StartPanel.Location = new System.Drawing.Point(461, 417);
+            this.StartPanel.Location = new System.Drawing.Point(794, 12);
             this.StartPanel.Name = "StartPanel";
-            this.StartPanel.Size = new System.Drawing.Size(311, 63);
+            this.StartPanel.Size = new System.Drawing.Size(326, 63);
             this.StartPanel.TabIndex = 1;
             // 
             // GuestTextBox
             // 
-            this.GuestTextBox.Location = new System.Drawing.Point(198, 18);
+            this.GuestTextBox.Location = new System.Drawing.Point(231, 18);
             this.GuestTextBox.Name = "GuestTextBox";
             this.GuestTextBox.Size = new System.Drawing.Size(71, 31);
             this.GuestTextBox.TabIndex = 1;
@@ -176,9 +146,9 @@
             this.StartMenuLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.StartMenuLabel.Location = new System.Drawing.Point(3, 21);
             this.StartMenuLabel.Name = "StartMenuLabel";
-            this.StartMenuLabel.Size = new System.Drawing.Size(171, 25);
+            this.StartMenuLabel.Size = new System.Drawing.Size(201, 25);
             this.StartMenuLabel.TabIndex = 0;
-            this.StartMenuLabel.Text = "Number of Guests:";
+            this.StartMenuLabel.Text = "Number of Attendees:";
             // 
             // CourseGroupBox
             // 
@@ -190,7 +160,7 @@
             this.CourseGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CourseGroupBox.Location = new System.Drawing.Point(12, 12);
             this.CourseGroupBox.Name = "CourseGroupBox";
-            this.CourseGroupBox.Size = new System.Drawing.Size(426, 260);
+            this.CourseGroupBox.Size = new System.Drawing.Size(426, 373);
             this.CourseGroupBox.TabIndex = 2;
             this.CourseGroupBox.TabStop = false;
             this.CourseGroupBox.Text = "Course Selection";
@@ -235,7 +205,7 @@
             "ASAP.NET with C# Part B     \t5 Days  \t€1250"});
             this.ListBoxCourse.Location = new System.Drawing.Point(6, 61);
             this.ListBoxCourse.Name = "ListBoxCourse";
-            this.ListBoxCourse.Size = new System.Drawing.Size(414, 154);
+            this.ListBoxCourse.Size = new System.Drawing.Size(414, 279);
             this.ListBoxCourse.TabIndex = 3;
             // 
             // VenueGroupBox
@@ -247,7 +217,7 @@
             this.VenueGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.VenueGroupBox.Location = new System.Drawing.Point(444, 12);
             this.VenueGroupBox.Name = "VenueGroupBox";
-            this.VenueGroupBox.Size = new System.Drawing.Size(344, 251);
+            this.VenueGroupBox.Size = new System.Drawing.Size(339, 373);
             this.VenueGroupBox.TabIndex = 3;
             this.VenueGroupBox.TabStop = false;
             this.VenueGroupBox.Text = "Venue Selection";
@@ -255,7 +225,7 @@
             // PricePerNightLabel
             // 
             this.PricePerNightLabel.AutoSize = true;
-            this.PricePerNightLabel.Location = new System.Drawing.Point(180, 27);
+            this.PricePerNightLabel.Location = new System.Drawing.Point(175, 33);
             this.PricePerNightLabel.Name = "PricePerNightLabel";
             this.PricePerNightLabel.Size = new System.Drawing.Size(124, 25);
             this.PricePerNightLabel.TabIndex = 3;
@@ -264,7 +234,7 @@
             // LocationLabel
             // 
             this.LocationLabel.AutoSize = true;
-            this.LocationLabel.Location = new System.Drawing.Point(6, 29);
+            this.LocationLabel.Location = new System.Drawing.Point(6, 33);
             this.LocationLabel.Name = "LocationLabel";
             this.LocationLabel.Size = new System.Drawing.Size(85, 25);
             this.LocationLabel.TabIndex = 2;
@@ -283,9 +253,9 @@
             "Killarney \t\t€149.99",
             "Letterkenny\t€89.99",
             "Sligo \t\t€119.99"});
-            this.ListBoxVenue.Location = new System.Drawing.Point(8, 57);
+            this.ListBoxVenue.Location = new System.Drawing.Point(6, 61);
             this.ListBoxVenue.Name = "ListBoxVenue";
-            this.ListBoxVenue.Size = new System.Drawing.Size(320, 179);
+            this.ListBoxVenue.Size = new System.Drawing.Size(320, 279);
             this.ListBoxVenue.TabIndex = 1;
             // 
             // GroupBoxUpgrades
@@ -296,9 +266,9 @@
             this.GroupBoxUpgrades.Controls.Add(this.ExecutiveRadioButton);
             this.GroupBoxUpgrades.Controls.Add(this.MasterSuiteRadioButton);
             this.GroupBoxUpgrades.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.GroupBoxUpgrades.Location = new System.Drawing.Point(12, 278);
+            this.GroupBoxUpgrades.Location = new System.Drawing.Point(1126, 12);
             this.GroupBoxUpgrades.Name = "GroupBoxUpgrades";
-            this.GroupBoxUpgrades.Size = new System.Drawing.Size(436, 202);
+            this.GroupBoxUpgrades.Size = new System.Drawing.Size(412, 246);
             this.GroupBoxUpgrades.TabIndex = 4;
             this.GroupBoxUpgrades.TabStop = false;
             this.GroupBoxUpgrades.Text = "Room Upgrades";
@@ -350,9 +320,9 @@
             this.CertificateGroupBox.BackColor = System.Drawing.SystemColors.Window;
             this.CertificateGroupBox.Controls.Add(this.CheckBoxCertificate);
             this.CertificateGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CertificateGroupBox.Location = new System.Drawing.Point(461, 278);
+            this.CertificateGroupBox.Location = new System.Drawing.Point(1126, 264);
             this.CertificateGroupBox.Name = "CertificateGroupBox";
-            this.CertificateGroupBox.Size = new System.Drawing.Size(311, 133);
+            this.CertificateGroupBox.Size = new System.Drawing.Size(412, 121);
             this.CertificateGroupBox.TabIndex = 5;
             this.CertificateGroupBox.TabStop = false;
             this.CertificateGroupBox.Text = "Certificates";
@@ -360,7 +330,7 @@
             // CheckBoxCertificate
             // 
             this.CheckBoxCertificate.AutoSize = true;
-            this.CheckBoxCertificate.Location = new System.Drawing.Point(18, 47);
+            this.CheckBoxCertificate.Location = new System.Drawing.Point(18, 43);
             this.CheckBoxCertificate.Name = "CheckBoxCertificate";
             this.CheckBoxCertificate.Size = new System.Drawing.Size(287, 54);
             this.CheckBoxCertificate.TabIndex = 0;
@@ -371,7 +341,7 @@
             // 
             this.DisplayButton.BackColor = System.Drawing.SystemColors.Window;
             this.DisplayButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DisplayButton.Location = new System.Drawing.Point(32, 521);
+            this.DisplayButton.Location = new System.Drawing.Point(86, 34);
             this.DisplayButton.Name = "DisplayButton";
             this.DisplayButton.Size = new System.Drawing.Size(112, 34);
             this.DisplayButton.TabIndex = 6;
@@ -384,7 +354,7 @@
             // 
             this.BookButton.BackColor = System.Drawing.SystemColors.Window;
             this.BookButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BookButton.Location = new System.Drawing.Point(184, 521);
+            this.BookButton.Location = new System.Drawing.Point(84, 127);
             this.BookButton.Name = "BookButton";
             this.BookButton.Size = new System.Drawing.Size(112, 34);
             this.BookButton.TabIndex = 7;
@@ -397,7 +367,7 @@
             // 
             this.SummaryButton.BackColor = System.Drawing.SystemColors.Window;
             this.SummaryButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SummaryButton.Location = new System.Drawing.Point(336, 521);
+            this.SummaryButton.Location = new System.Drawing.Point(86, 220);
             this.SummaryButton.Name = "SummaryButton";
             this.SummaryButton.Size = new System.Drawing.Size(112, 34);
             this.SummaryButton.TabIndex = 8;
@@ -410,7 +380,7 @@
             // 
             this.ClearButton.BackColor = System.Drawing.SystemColors.Window;
             this.ClearButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ClearButton.Location = new System.Drawing.Point(488, 521);
+            this.ClearButton.Location = new System.Drawing.Point(84, 313);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(112, 34);
             this.ClearButton.TabIndex = 9;
@@ -423,7 +393,7 @@
             // 
             this.ExitButton.BackColor = System.Drawing.SystemColors.Window;
             this.ExitButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ExitButton.Location = new System.Drawing.Point(640, 521);
+            this.ExitButton.Location = new System.Drawing.Point(84, 406);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(112, 34);
             this.ExitButton.TabIndex = 10;
@@ -482,7 +452,7 @@
             this.DisplayGroupBox.Controls.Add(this.layCourseSelectedLabelDispa);
             this.DisplayGroupBox.Controls.Add(this.CourseFeesLabelDisplay);
             this.DisplayGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DisplayGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.DisplayGroupBox.Location = new System.Drawing.Point(7, 400);
             this.DisplayGroupBox.Name = "DisplayGroupBox";
             this.DisplayGroupBox.Size = new System.Drawing.Size(776, 489);
             this.DisplayGroupBox.TabIndex = 7;
@@ -693,47 +663,14 @@
             // SummaryGroupBox
             // 
             this.SummaryGroupBox.BackColor = System.Drawing.SystemColors.Window;
-            this.SummaryGroupBox.Controls.Add(this.JuniorSummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.ExecutiveSummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.MasterSummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.SligoSummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.LetterkennySummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.KillarneySummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.DublinSummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.CorkSummaryTextBox);
             this.SummaryGroupBox.Controls.Add(this.CertificateSummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.ClifdenSummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.BelmulletSummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.ASPBSummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.ASPASummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.AdvancedSummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.IntermediateSummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.BasicsSummaryTextBox);
-            this.SummaryGroupBox.Controls.Add(this.FundamentalsCostTextBox);
-            this.SummaryGroupBox.Controls.Add(this.TotalJuniorSummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.TotalExecutiveSummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.TotalMasterSuiteSummaryLabel);
             this.SummaryGroupBox.Controls.Add(this.DigitalCertSummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.TotalSligoSummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.TotalLetterkennySummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.TotalKillarneySummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.TotalDublinSummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.TotalCorkSummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.TotalClifdenSummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.BelmulletSummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.ASPPartBSummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.ASPPartASummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.AdvancedSummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.IntermediateSummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.TotalBasicsSummaryLabel);
-            this.SummaryGroupBox.Controls.Add(this.TotalFundamentalsSummaryLabel);
             this.SummaryGroupBox.Controls.Add(this.TotalDiscountedTextBox);
             this.SummaryGroupBox.Controls.Add(this.TotalEnrollmentFeesTextBox);
             this.SummaryGroupBox.Controls.Add(this.AverageRevenueSummaryTextBox);
             this.SummaryGroupBox.Controls.Add(this.TotalLodgingFeesTextBox);
             this.SummaryGroupBox.Controls.Add(this.TotalSummarySalesTextBox);
             this.SummaryGroupBox.Controls.Add(this.TotalSummaryTranasctionsTextBox);
-            this.SummaryGroupBox.Controls.Add(this.SpecificLabelSummary);
             this.SummaryGroupBox.Controls.Add(this.AverageBookingSummaryLabel);
             this.SummaryGroupBox.Controls.Add(this.NumberDiscountedBookingsLabel);
             this.SummaryGroupBox.Controls.Add(this.LodgingFeesSummaryLabel);
@@ -741,7 +678,7 @@
             this.SummaryGroupBox.Controls.Add(this.TotalSalesLabelSummary);
             this.SummaryGroupBox.Controls.Add(this.NumberTransactionsSummary);
             this.SummaryGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SummaryGroupBox.Location = new System.Drawing.Point(11, 12);
+            this.SummaryGroupBox.Location = new System.Drawing.Point(6, 400);
             this.SummaryGroupBox.Name = "SummaryGroupBox";
             this.SummaryGroupBox.Size = new System.Drawing.Size(777, 489);
             this.SummaryGroupBox.TabIndex = 21;
@@ -749,404 +686,129 @@
             this.SummaryGroupBox.Text = "Company Summary Data";
             this.SummaryGroupBox.Visible = false;
             // 
-            // JuniorSummaryTextBox
-            // 
-            this.JuniorSummaryTextBox.Location = new System.Drawing.Point(616, 433);
-            this.JuniorSummaryTextBox.Name = "JuniorSummaryTextBox";
-            this.JuniorSummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.JuniorSummaryTextBox.TabIndex = 46;
-            this.JuniorSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ExecutiveSummaryTextBox
-            // 
-            this.ExecutiveSummaryTextBox.Location = new System.Drawing.Point(616, 395);
-            this.ExecutiveSummaryTextBox.Name = "ExecutiveSummaryTextBox";
-            this.ExecutiveSummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.ExecutiveSummaryTextBox.TabIndex = 45;
-            this.ExecutiveSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // MasterSummaryTextBox
-            // 
-            this.MasterSummaryTextBox.Location = new System.Drawing.Point(616, 357);
-            this.MasterSummaryTextBox.Name = "MasterSummaryTextBox";
-            this.MasterSummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.MasterSummaryTextBox.TabIndex = 44;
-            this.MasterSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // SligoSummaryTextBox
-            // 
-            this.SligoSummaryTextBox.Location = new System.Drawing.Point(616, 319);
-            this.SligoSummaryTextBox.Name = "SligoSummaryTextBox";
-            this.SligoSummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.SligoSummaryTextBox.TabIndex = 43;
-            this.SligoSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // LetterkennySummaryTextBox
-            // 
-            this.LetterkennySummaryTextBox.Location = new System.Drawing.Point(616, 281);
-            this.LetterkennySummaryTextBox.Name = "LetterkennySummaryTextBox";
-            this.LetterkennySummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.LetterkennySummaryTextBox.TabIndex = 42;
-            this.LetterkennySummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // KillarneySummaryTextBox
-            // 
-            this.KillarneySummaryTextBox.Location = new System.Drawing.Point(616, 243);
-            this.KillarneySummaryTextBox.Name = "KillarneySummaryTextBox";
-            this.KillarneySummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.KillarneySummaryTextBox.TabIndex = 41;
-            this.KillarneySummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DublinSummaryTextBox
-            // 
-            this.DublinSummaryTextBox.Location = new System.Drawing.Point(616, 205);
-            this.DublinSummaryTextBox.Name = "DublinSummaryTextBox";
-            this.DublinSummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.DublinSummaryTextBox.TabIndex = 40;
-            this.DublinSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // CorkSummaryTextBox
-            // 
-            this.CorkSummaryTextBox.Location = new System.Drawing.Point(616, 167);
-            this.CorkSummaryTextBox.Name = "CorkSummaryTextBox";
-            this.CorkSummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.CorkSummaryTextBox.TabIndex = 39;
-            this.CorkSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // CertificateSummaryTextBox
             // 
-            this.CertificateSummaryTextBox.Location = new System.Drawing.Point(238, 440);
+            this.CertificateSummaryTextBox.Location = new System.Drawing.Point(445, 314);
             this.CertificateSummaryTextBox.Name = "CertificateSummaryTextBox";
-            this.CertificateSummaryTextBox.Size = new System.Drawing.Size(150, 31);
+            this.CertificateSummaryTextBox.Size = new System.Drawing.Size(144, 31);
             this.CertificateSummaryTextBox.TabIndex = 38;
             this.CertificateSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ClifdenSummaryTextBox
-            // 
-            this.ClifdenSummaryTextBox.Location = new System.Drawing.Point(238, 403);
-            this.ClifdenSummaryTextBox.Name = "ClifdenSummaryTextBox";
-            this.ClifdenSummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.ClifdenSummaryTextBox.TabIndex = 37;
-            this.ClifdenSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BelmulletSummaryTextBox
-            // 
-            this.BelmulletSummaryTextBox.Location = new System.Drawing.Point(238, 369);
-            this.BelmulletSummaryTextBox.Name = "BelmulletSummaryTextBox";
-            this.BelmulletSummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.BelmulletSummaryTextBox.TabIndex = 36;
-            this.BelmulletSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ASPBSummaryTextBox
-            // 
-            this.ASPBSummaryTextBox.Location = new System.Drawing.Point(238, 334);
-            this.ASPBSummaryTextBox.Name = "ASPBSummaryTextBox";
-            this.ASPBSummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.ASPBSummaryTextBox.TabIndex = 35;
-            this.ASPBSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ASPASummaryTextBox
-            // 
-            this.ASPASummaryTextBox.Location = new System.Drawing.Point(238, 300);
-            this.ASPASummaryTextBox.Name = "ASPASummaryTextBox";
-            this.ASPASummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.ASPASummaryTextBox.TabIndex = 34;
-            this.ASPASummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // AdvancedSummaryTextBox
-            // 
-            this.AdvancedSummaryTextBox.Location = new System.Drawing.Point(238, 266);
-            this.AdvancedSummaryTextBox.Name = "AdvancedSummaryTextBox";
-            this.AdvancedSummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.AdvancedSummaryTextBox.TabIndex = 33;
-            this.AdvancedSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // IntermediateSummaryTextBox
-            // 
-            this.IntermediateSummaryTextBox.Location = new System.Drawing.Point(238, 231);
-            this.IntermediateSummaryTextBox.Name = "IntermediateSummaryTextBox";
-            this.IntermediateSummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.IntermediateSummaryTextBox.TabIndex = 32;
-            this.IntermediateSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BasicsSummaryTextBox
-            // 
-            this.BasicsSummaryTextBox.Location = new System.Drawing.Point(238, 198);
-            this.BasicsSummaryTextBox.Name = "BasicsSummaryTextBox";
-            this.BasicsSummaryTextBox.Size = new System.Drawing.Size(150, 31);
-            this.BasicsSummaryTextBox.TabIndex = 31;
-            this.BasicsSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // FundamentalsCostTextBox
-            // 
-            this.FundamentalsCostTextBox.Location = new System.Drawing.Point(238, 164);
-            this.FundamentalsCostTextBox.Name = "FundamentalsCostTextBox";
-            this.FundamentalsCostTextBox.Size = new System.Drawing.Size(150, 31);
-            this.FundamentalsCostTextBox.TabIndex = 30;
-            this.FundamentalsCostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TotalJuniorSummaryLabel
-            // 
-            this.TotalJuniorSummaryLabel.AutoSize = true;
-            this.TotalJuniorSummaryLabel.Location = new System.Drawing.Point(408, 436);
-            this.TotalJuniorSummaryLabel.Name = "TotalJuniorSummaryLabel";
-            this.TotalJuniorSummaryLabel.Size = new System.Drawing.Size(160, 25);
-            this.TotalJuniorSummaryLabel.TabIndex = 29;
-            this.TotalJuniorSummaryLabel.Text = "Total Junior Suite";
-            // 
-            // TotalExecutiveSummaryLabel
-            // 
-            this.TotalExecutiveSummaryLabel.AutoSize = true;
-            this.TotalExecutiveSummaryLabel.Location = new System.Drawing.Point(408, 398);
-            this.TotalExecutiveSummaryLabel.Name = "TotalExecutiveSummaryLabel";
-            this.TotalExecutiveSummaryLabel.Size = new System.Drawing.Size(189, 25);
-            this.TotalExecutiveSummaryLabel.TabIndex = 28;
-            this.TotalExecutiveSummaryLabel.Text = "Total Executive Suite";
-            // 
-            // TotalMasterSuiteSummaryLabel
-            // 
-            this.TotalMasterSuiteSummaryLabel.AutoSize = true;
-            this.TotalMasterSuiteSummaryLabel.Location = new System.Drawing.Point(408, 360);
-            this.TotalMasterSuiteSummaryLabel.Name = "TotalMasterSuiteSummaryLabel";
-            this.TotalMasterSuiteSummaryLabel.Size = new System.Drawing.Size(166, 25);
-            this.TotalMasterSuiteSummaryLabel.TabIndex = 27;
-            this.TotalMasterSuiteSummaryLabel.Text = "Total Master Suite";
             // 
             // DigitalCertSummaryLabel
             // 
             this.DigitalCertSummaryLabel.AutoSize = true;
-            this.DigitalCertSummaryLabel.Location = new System.Drawing.Point(20, 443);
+            this.DigitalCertSummaryLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DigitalCertSummaryLabel.Location = new System.Drawing.Point(127, 314);
             this.DigitalCertSummaryLabel.Name = "DigitalCertSummaryLabel";
-            this.DigitalCertSummaryLabel.Size = new System.Drawing.Size(209, 25);
+            this.DigitalCertSummaryLabel.Size = new System.Drawing.Size(235, 28);
             this.DigitalCertSummaryLabel.TabIndex = 26;
             this.DigitalCertSummaryLabel.Text = "Total Digital Certificate";
             // 
-            // TotalSligoSummaryLabel
-            // 
-            this.TotalSligoSummaryLabel.AutoSize = true;
-            this.TotalSligoSummaryLabel.Location = new System.Drawing.Point(408, 322);
-            this.TotalSligoSummaryLabel.Name = "TotalSligoSummaryLabel";
-            this.TotalSligoSummaryLabel.Size = new System.Drawing.Size(101, 25);
-            this.TotalSligoSummaryLabel.TabIndex = 25;
-            this.TotalSligoSummaryLabel.Text = "Total Sligo";
-            // 
-            // TotalLetterkennySummaryLabel
-            // 
-            this.TotalLetterkennySummaryLabel.AutoSize = true;
-            this.TotalLetterkennySummaryLabel.Location = new System.Drawing.Point(408, 284);
-            this.TotalLetterkennySummaryLabel.Name = "TotalLetterkennySummaryLabel";
-            this.TotalLetterkennySummaryLabel.Size = new System.Drawing.Size(161, 25);
-            this.TotalLetterkennySummaryLabel.TabIndex = 24;
-            this.TotalLetterkennySummaryLabel.Text = "Total Letterkenny";
-            // 
-            // TotalKillarneySummaryLabel
-            // 
-            this.TotalKillarneySummaryLabel.AutoSize = true;
-            this.TotalKillarneySummaryLabel.Location = new System.Drawing.Point(408, 246);
-            this.TotalKillarneySummaryLabel.Name = "TotalKillarneySummaryLabel";
-            this.TotalKillarneySummaryLabel.Size = new System.Drawing.Size(134, 25);
-            this.TotalKillarneySummaryLabel.TabIndex = 23;
-            this.TotalKillarneySummaryLabel.Text = "Total Killarney";
-            // 
-            // TotalDublinSummaryLabel
-            // 
-            this.TotalDublinSummaryLabel.AutoSize = true;
-            this.TotalDublinSummaryLabel.Location = new System.Drawing.Point(408, 208);
-            this.TotalDublinSummaryLabel.Name = "TotalDublinSummaryLabel";
-            this.TotalDublinSummaryLabel.Size = new System.Drawing.Size(115, 25);
-            this.TotalDublinSummaryLabel.TabIndex = 22;
-            this.TotalDublinSummaryLabel.Text = "Total Dublin";
-            // 
-            // TotalCorkSummaryLabel
-            // 
-            this.TotalCorkSummaryLabel.AutoSize = true;
-            this.TotalCorkSummaryLabel.Location = new System.Drawing.Point(408, 170);
-            this.TotalCorkSummaryLabel.Name = "TotalCorkSummaryLabel";
-            this.TotalCorkSummaryLabel.Size = new System.Drawing.Size(98, 25);
-            this.TotalCorkSummaryLabel.TabIndex = 21;
-            this.TotalCorkSummaryLabel.Text = "Total Cork";
-            // 
-            // TotalClifdenSummaryLabel
-            // 
-            this.TotalClifdenSummaryLabel.AutoSize = true;
-            this.TotalClifdenSummaryLabel.Location = new System.Drawing.Point(20, 406);
-            this.TotalClifdenSummaryLabel.Name = "TotalClifdenSummaryLabel";
-            this.TotalClifdenSummaryLabel.Size = new System.Drawing.Size(119, 25);
-            this.TotalClifdenSummaryLabel.TabIndex = 20;
-            this.TotalClifdenSummaryLabel.Text = "Total Clifden";
-            // 
-            // BelmulletSummaryLabel
-            // 
-            this.BelmulletSummaryLabel.AutoSize = true;
-            this.BelmulletSummaryLabel.Location = new System.Drawing.Point(20, 372);
-            this.BelmulletSummaryLabel.Name = "BelmulletSummaryLabel";
-            this.BelmulletSummaryLabel.Size = new System.Drawing.Size(140, 25);
-            this.BelmulletSummaryLabel.TabIndex = 19;
-            this.BelmulletSummaryLabel.Text = "Total Belmullet";
-            // 
-            // ASPPartBSummaryLabel
-            // 
-            this.ASPPartBSummaryLabel.AutoSize = true;
-            this.ASPPartBSummaryLabel.Location = new System.Drawing.Point(21, 337);
-            this.ASPPartBSummaryLabel.Name = "ASPPartBSummaryLabel";
-            this.ASPPartBSummaryLabel.Size = new System.Drawing.Size(188, 25);
-            this.ASPPartBSummaryLabel.TabIndex = 18;
-            this.ASPPartBSummaryLabel.Text = "Total ASP.NET Part B";
-            // 
-            // ASPPartASummaryLabel
-            // 
-            this.ASPPartASummaryLabel.AutoSize = true;
-            this.ASPPartASummaryLabel.Location = new System.Drawing.Point(21, 303);
-            this.ASPPartASummaryLabel.Name = "ASPPartASummaryLabel";
-            this.ASPPartASummaryLabel.Size = new System.Drawing.Size(189, 25);
-            this.ASPPartASummaryLabel.TabIndex = 17;
-            this.ASPPartASummaryLabel.Text = "Total ASP.NET Part A";
-            // 
-            // AdvancedSummaryLabel
-            // 
-            this.AdvancedSummaryLabel.AutoSize = true;
-            this.AdvancedSummaryLabel.Location = new System.Drawing.Point(21, 269);
-            this.AdvancedSummaryLabel.Name = "AdvancedSummaryLabel";
-            this.AdvancedSummaryLabel.Size = new System.Drawing.Size(171, 25);
-            this.AdvancedSummaryLabel.TabIndex = 16;
-            this.AdvancedSummaryLabel.Text = "Total C# Advanced";
-            // 
-            // IntermediateSummaryLabel
-            // 
-            this.IntermediateSummaryLabel.AutoSize = true;
-            this.IntermediateSummaryLabel.Location = new System.Drawing.Point(22, 234);
-            this.IntermediateSummaryLabel.Name = "IntermediateSummaryLabel";
-            this.IntermediateSummaryLabel.Size = new System.Drawing.Size(196, 25);
-            this.IntermediateSummaryLabel.TabIndex = 15;
-            this.IntermediateSummaryLabel.Text = "Total C# Intermediate";
-            // 
-            // TotalBasicsSummaryLabel
-            // 
-            this.TotalBasicsSummaryLabel.AutoSize = true;
-            this.TotalBasicsSummaryLabel.Location = new System.Drawing.Point(22, 201);
-            this.TotalBasicsSummaryLabel.Name = "TotalBasicsSummaryLabel";
-            this.TotalBasicsSummaryLabel.Size = new System.Drawing.Size(138, 25);
-            this.TotalBasicsSummaryLabel.TabIndex = 14;
-            this.TotalBasicsSummaryLabel.Text = "Total C# Basics";
-            // 
-            // TotalFundamentalsSummaryLabel
-            // 
-            this.TotalFundamentalsSummaryLabel.AutoSize = true;
-            this.TotalFundamentalsSummaryLabel.Location = new System.Drawing.Point(21, 167);
-            this.TotalFundamentalsSummaryLabel.Name = "TotalFundamentalsSummaryLabel";
-            this.TotalFundamentalsSummaryLabel.Size = new System.Drawing.Size(205, 25);
-            this.TotalFundamentalsSummaryLabel.TabIndex = 13;
-            this.TotalFundamentalsSummaryLabel.Text = "Total C# Fundamentals";
-            // 
             // TotalDiscountedTextBox
             // 
-            this.TotalDiscountedTextBox.Location = new System.Drawing.Point(253, 95);
+            this.TotalDiscountedTextBox.Location = new System.Drawing.Point(445, 152);
             this.TotalDiscountedTextBox.Name = "TotalDiscountedTextBox";
-            this.TotalDiscountedTextBox.Size = new System.Drawing.Size(112, 31);
+            this.TotalDiscountedTextBox.Size = new System.Drawing.Size(144, 31);
             this.TotalDiscountedTextBox.TabIndex = 12;
             this.TotalDiscountedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TotalEnrollmentFeesTextBox
             // 
-            this.TotalEnrollmentFeesTextBox.Location = new System.Drawing.Point(253, 61);
+            this.TotalEnrollmentFeesTextBox.Location = new System.Drawing.Point(445, 115);
             this.TotalEnrollmentFeesTextBox.Name = "TotalEnrollmentFeesTextBox";
-            this.TotalEnrollmentFeesTextBox.Size = new System.Drawing.Size(112, 31);
+            this.TotalEnrollmentFeesTextBox.Size = new System.Drawing.Size(144, 31);
             this.TotalEnrollmentFeesTextBox.TabIndex = 11;
             this.TotalEnrollmentFeesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // AverageRevenueSummaryTextBox
             // 
-            this.AverageRevenueSummaryTextBox.Location = new System.Drawing.Point(647, 93);
+            this.AverageRevenueSummaryTextBox.Location = new System.Drawing.Point(445, 195);
             this.AverageRevenueSummaryTextBox.Name = "AverageRevenueSummaryTextBox";
-            this.AverageRevenueSummaryTextBox.Size = new System.Drawing.Size(119, 31);
+            this.AverageRevenueSummaryTextBox.Size = new System.Drawing.Size(144, 31);
             this.AverageRevenueSummaryTextBox.TabIndex = 10;
             this.AverageRevenueSummaryTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TotalLodgingFeesTextBox
             // 
-            this.TotalLodgingFeesTextBox.Location = new System.Drawing.Point(647, 57);
+            this.TotalLodgingFeesTextBox.Location = new System.Drawing.Point(445, 274);
             this.TotalLodgingFeesTextBox.Name = "TotalLodgingFeesTextBox";
-            this.TotalLodgingFeesTextBox.Size = new System.Drawing.Size(119, 31);
+            this.TotalLodgingFeesTextBox.Size = new System.Drawing.Size(144, 31);
             this.TotalLodgingFeesTextBox.TabIndex = 9;
             this.TotalLodgingFeesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TotalSummarySalesTextBox
             // 
-            this.TotalSummarySalesTextBox.Location = new System.Drawing.Point(647, 21);
+            this.TotalSummarySalesTextBox.Location = new System.Drawing.Point(445, 237);
             this.TotalSummarySalesTextBox.Name = "TotalSummarySalesTextBox";
-            this.TotalSummarySalesTextBox.Size = new System.Drawing.Size(119, 31);
+            this.TotalSummarySalesTextBox.Size = new System.Drawing.Size(144, 31);
             this.TotalSummarySalesTextBox.TabIndex = 8;
             this.TotalSummarySalesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TotalSummaryTranasctionsTextBox
             // 
-            this.TotalSummaryTranasctionsTextBox.Location = new System.Drawing.Point(253, 26);
+            this.TotalSummaryTranasctionsTextBox.Location = new System.Drawing.Point(445, 78);
             this.TotalSummaryTranasctionsTextBox.Name = "TotalSummaryTranasctionsTextBox";
-            this.TotalSummaryTranasctionsTextBox.Size = new System.Drawing.Size(112, 31);
+            this.TotalSummaryTranasctionsTextBox.Size = new System.Drawing.Size(144, 31);
             this.TotalSummaryTranasctionsTextBox.TabIndex = 7;
             this.TotalSummaryTranasctionsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // SpecificLabelSummary
-            // 
-            this.SpecificLabelSummary.AutoSize = true;
-            this.SpecificLabelSummary.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.SpecificLabelSummary.Location = new System.Drawing.Point(117, 129);
-            this.SpecificLabelSummary.Name = "SpecificLabelSummary";
-            this.SpecificLabelSummary.Size = new System.Drawing.Size(524, 25);
-            this.SpecificLabelSummary.TabIndex = 6;
-            this.SpecificLabelSummary.Text = "Specific Courses / Suites / Certificate / Venues Total Booking Fees";
             // 
             // AverageBookingSummaryLabel
             // 
             this.AverageBookingSummaryLabel.AutoSize = true;
-            this.AverageBookingSummaryLabel.Location = new System.Drawing.Point(371, 96);
+            this.AverageBookingSummaryLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AverageBookingSummaryLabel.Location = new System.Drawing.Point(126, 194);
             this.AverageBookingSummaryLabel.Name = "AverageBookingSummaryLabel";
-            this.AverageBookingSummaryLabel.Size = new System.Drawing.Size(270, 25);
+            this.AverageBookingSummaryLabel.Size = new System.Drawing.Size(297, 28);
             this.AverageBookingSummaryLabel.TabIndex = 5;
             this.AverageBookingSummaryLabel.Text = "Average Revenue Per Booking";
             // 
             // NumberDiscountedBookingsLabel
             // 
             this.NumberDiscountedBookingsLabel.AutoSize = true;
-            this.NumberDiscountedBookingsLabel.Location = new System.Drawing.Point(13, 98);
+            this.NumberDiscountedBookingsLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NumberDiscountedBookingsLabel.Location = new System.Drawing.Point(127, 152);
             this.NumberDiscountedBookingsLabel.Name = "NumberDiscountedBookingsLabel";
-            this.NumberDiscountedBookingsLabel.Size = new System.Drawing.Size(239, 25);
+            this.NumberDiscountedBookingsLabel.Size = new System.Drawing.Size(265, 28);
             this.NumberDiscountedBookingsLabel.TabIndex = 4;
             this.NumberDiscountedBookingsLabel.Text = "Total Discounted Bookings";
             // 
             // LodgingFeesSummaryLabel
             // 
             this.LodgingFeesSummaryLabel.AutoSize = true;
-            this.LodgingFeesSummaryLabel.Location = new System.Drawing.Point(476, 60);
+            this.LodgingFeesSummaryLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LodgingFeesSummaryLabel.Location = new System.Drawing.Point(127, 277);
             this.LodgingFeesSummaryLabel.Name = "LodgingFeesSummaryLabel";
-            this.LodgingFeesSummaryLabel.Size = new System.Drawing.Size(170, 25);
+            this.LodgingFeesSummaryLabel.Size = new System.Drawing.Size(188, 28);
             this.LodgingFeesSummaryLabel.TabIndex = 3;
             this.LodgingFeesSummaryLabel.Text = "Total Lodging Fees";
             // 
             // EnrollmentFeesSummaryLabel
             // 
             this.EnrollmentFeesSummaryLabel.AutoSize = true;
-            this.EnrollmentFeesSummaryLabel.Location = new System.Drawing.Point(16, 64);
+            this.EnrollmentFeesSummaryLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EnrollmentFeesSummaryLabel.Location = new System.Drawing.Point(127, 115);
             this.EnrollmentFeesSummaryLabel.Name = "EnrollmentFeesSummaryLabel";
-            this.EnrollmentFeesSummaryLabel.Size = new System.Drawing.Size(194, 25);
+            this.EnrollmentFeesSummaryLabel.Size = new System.Drawing.Size(216, 28);
             this.EnrollmentFeesSummaryLabel.TabIndex = 2;
             this.EnrollmentFeesSummaryLabel.Text = "Total Enrollment Fees";
             // 
             // TotalSalesLabelSummary
             // 
             this.TotalSalesLabelSummary.AutoSize = true;
-            this.TotalSalesLabelSummary.Location = new System.Drawing.Point(539, 24);
+            this.TotalSalesLabelSummary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TotalSalesLabelSummary.Location = new System.Drawing.Point(127, 237);
             this.TotalSalesLabelSummary.Name = "TotalSalesLabelSummary";
-            this.TotalSalesLabelSummary.Size = new System.Drawing.Size(102, 25);
+            this.TotalSalesLabelSummary.Size = new System.Drawing.Size(113, 28);
             this.TotalSalesLabelSummary.TabIndex = 1;
             this.TotalSalesLabelSummary.Text = "Total Sales";
             // 
             // NumberTransactionsSummary
             // 
             this.NumberTransactionsSummary.AutoSize = true;
-            this.NumberTransactionsSummary.Location = new System.Drawing.Point(14, 29);
+            this.NumberTransactionsSummary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NumberTransactionsSummary.Location = new System.Drawing.Point(127, 78);
             this.NumberTransactionsSummary.Name = "NumberTransactionsSummary";
-            this.NumberTransactionsSummary.Size = new System.Drawing.Size(166, 25);
+            this.NumberTransactionsSummary.Size = new System.Drawing.Size(183, 28);
             this.NumberTransactionsSummary.TabIndex = 0;
             this.NumberTransactionsSummary.Text = "Total Transactions";
             // 
@@ -1159,18 +821,40 @@
             this.TransactionCountSummary.TabIndex = 0;
             this.TransactionCountSummary.Text = "Number Transactions";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.Controls.Add(this.DisplayButton);
+            this.panel1.Controls.Add(this.BookButton);
+            this.panel1.Controls.Add(this.SummaryButton);
+            this.panel1.Controls.Add(this.ExitButton);
+            this.panel1.Controls.Add(this.ClearButton);
+            this.panel1.Location = new System.Drawing.Point(1007, 400);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 489);
+            this.panel1.TabIndex = 22;
+            // 
+            // DiscountLabelInformation
+            // 
+            this.DiscountLabelInformation.AutoSize = true;
+            this.DiscountLabelInformation.BackColor = System.Drawing.SystemColors.Window;
+            this.DiscountLabelInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.DiscountLabelInformation.Location = new System.Drawing.Point(794, 96);
+            this.DiscountLabelInformation.Name = "DiscountLabelInformation";
+            this.DiscountLabelInformation.Size = new System.Drawing.Size(319, 75);
+            this.DiscountLabelInformation.TabIndex = 7;
+            this.DiscountLabelInformation.Text = "7.5% Discount applies for courses with\r\n 3 or more participants that avail of \r\na" +
+    "n upgraded suite.";
+            // 
             // L2PLTDForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 730);
+            this.ClientSize = new System.Drawing.Size(1573, 1050);
+            this.Controls.Add(this.DiscountLabelInformation);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.SummaryGroupBox);
             this.Controls.Add(this.DisplayGroupBox);
-            this.Controls.Add(this.ExitButton);
-            this.Controls.Add(this.ClearButton);
-            this.Controls.Add(this.SummaryButton);
-            this.Controls.Add(this.BookButton);
-            this.Controls.Add(this.DisplayButton);
             this.Controls.Add(this.CertificateGroupBox);
             this.Controls.Add(this.GroupBoxUpgrades);
             this.Controls.Add(this.VenueGroupBox);
@@ -1195,7 +879,9 @@
             this.DisplayGroupBox.PerformLayout();
             this.SummaryGroupBox.ResumeLayout(false);
             this.SummaryGroupBox.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1261,47 +947,16 @@
         private Label LodgingFeesSummaryLabel;
         private Label NumberDiscountedBookingsLabel;
         private Label AverageBookingSummaryLabel;
-        private Label SpecificLabelSummary;
         private TextBox AverageRevenueSummaryTextBox;
         private TextBox TotalLodgingFeesTextBox;
         private TextBox TotalSummarySalesTextBox;
         private TextBox TotalSummaryTranasctionsTextBox;
         private TextBox TotalDiscountedTextBox;
         private TextBox TotalEnrollmentFeesTextBox;
-        private Label BelmulletSummaryLabel;
-        private Label ASPPartBSummaryLabel;
-        private Label ASPPartASummaryLabel;
-        private Label AdvancedSummaryLabel;
-        private Label IntermediateSummaryLabel;
-        private Label TotalBasicsSummaryLabel;
-        private Label TotalFundamentalsSummaryLabel;
-        private Label TotalCorkSummaryLabel;
-        private Label TotalClifdenSummaryLabel;
-        private Label TotalKillarneySummaryLabel;
-        private Label TotalDublinSummaryLabel;
-        private Label TotalSligoSummaryLabel;
-        private Label TotalLetterkennySummaryLabel;
         private Label DigitalCertSummaryLabel;
-        private Label TotalMasterSuiteSummaryLabel;
-        private Label TotalJuniorSummaryLabel;
-        private Label TotalExecutiveSummaryLabel;
         private Label TransactionCountSummary;
-        private TextBox ASPBSummaryTextBox;
-        private TextBox ASPASummaryTextBox;
-        private TextBox AdvancedSummaryTextBox;
-        private TextBox IntermediateSummaryTextBox;
-        private TextBox BasicsSummaryTextBox;
-        private TextBox FundamentalsCostTextBox;
         private TextBox CertificateSummaryTextBox;
-        private TextBox ClifdenSummaryTextBox;
-        private TextBox BelmulletSummaryTextBox;
-        private TextBox JuniorSummaryTextBox;
-        private TextBox ExecutiveSummaryTextBox;
-        private TextBox MasterSummaryTextBox;
-        private TextBox SligoSummaryTextBox;
-        private TextBox LetterkennySummaryTextBox;
-        private TextBox KillarneySummaryTextBox;
-        private TextBox DublinSummaryTextBox;
-        private TextBox CorkSummaryTextBox;
+        private Panel panel1;
+        private Label DiscountLabelInformation;
     }
 }

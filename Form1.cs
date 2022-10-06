@@ -2,6 +2,8 @@
 // ID: 22220670
 // MS806: Assignment 2
 // Due Date: 14/10/22
+// L2P Ltd, is a company that provides residential software
+// programming courses in locations across Ireland
 
 using System.Security.Cryptography;
 using System.Windows.Forms;
@@ -173,10 +175,10 @@ namespace L2P_LTD
                             TripCost = TripCost - PriceReduction;
                         }
 
-                        this.CourseGroupBox.Visible = false;
-                        this.VenueGroupBox.Visible = false;
-                        this.CertificateGroupBox.Visible = false;
-                        this.GroupBoxUpgrades.Visible = false;
+                        //this.CourseGroupBox.Visible = false;
+                        //this.VenueGroupBox.Visible = false;
+                        //this.CertificateGroupBox.Visible = false;
+                        //this.GroupBoxUpgrades.Visible = false;
                         this.DisplayGroupBox.Visible = true;
                         this.Text = "Booking Overview";
 
@@ -216,7 +218,7 @@ namespace L2P_LTD
                "\nThe Course Selected is: " + CourseSelected +
                "\nVenue Selected is: " + VenueSelected +
                "\nNumber of Guests are: " + GuestCount.ToString() +
-               "\nBooking Cost was: €" + TripCost.ToString(), "Booking Successful", MessageBoxButtons.OK,
+               "\nBooking Cost was: €" + TripCost.ToString("0.00"), "Booking Successful", MessageBoxButtons.OK,
                MessageBoxIcon.Information);
 
             // add summary stats
@@ -238,22 +240,23 @@ namespace L2P_LTD
             {
                 if(TotalNumberBookings > 0)
                 {
+                    this.Text = "L2P LTD. Summary Data";
                     this.SummaryGroupBox.Visible = true;
                     this.DisplayGroupBox.Visible = false;
                     this.TotalSummaryTranasctionsTextBox.Text = TotalNumberBookings.ToString();
-                    this.TotalSummarySalesTextBox.Text = "€" + SummaryTransactionValue.ToString();
+                    this.TotalSummarySalesTextBox.Text = "€" + SummaryTransactionValue.ToString("0.00");
                     this.TotalEnrollmentFeesTextBox.Text = "€" + SummaryEnrollmentValue.ToString();
-                    this.TotalLodgingFeesTextBox.Text = "€" + SummaryLodgingValue.ToString();
+                    this.TotalLodgingFeesTextBox.Text = "€" + SummaryLodgingValue.ToString("0.00");
                     AverageRevenueTrip = SummaryTransactionValue / TotalNumberBookings;
                     this.AverageRevenueSummaryTextBox.Text = "€" + AverageRevenueTrip.ToString("0.00");
                     this.TotalDiscountedTextBox.Text = TotalNumberBookingsDiscount.ToString();
-                    this.CertificateSummaryTextBox.Text = "€" + SummaryCertCosts.ToString();
+                    this.CertificateSummaryTextBox.Text = "€" + SummaryCertCosts.ToString("0.00");
                 }
             }
             catch
             {
                 MessageBox.Show("There are no transactions to show." +
-                            "\nPlease ensure there transactions made.",
+                            "\nPlease ensure there are transactions made.",
                             "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
           
@@ -263,13 +266,17 @@ namespace L2P_LTD
         {
             this.SummaryGroupBox.Visible = false;
             this.DisplayGroupBox.Visible = false;
+            // reset title of form
+            this.Text = "L2P LTD. Programming Courses Ireland";
             this.CourseGroupBox.Visible = true;
             this.VenueGroupBox.Visible = true;
             this.CertificateGroupBox.Visible = true;
             this.GroupBoxUpgrades.Visible = true;
             this.GuestTextBox.Text = "0";
+            // have no default selection on listbox
             this.ListBoxVenue.SelectedIndex = -1;
             this.ListBoxCourse.SelectedIndex = -1;
+            // uncheck checkbox if digital cert selected
             this.CheckBoxCertificate.Checked = false;
             // radio buttons
             this.StandardRadioButton.Checked = true;
