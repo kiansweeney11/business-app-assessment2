@@ -213,7 +213,7 @@ namespace L2P_LTD
             MessageBox.Show("Your booking was Successful." +
                "\nThe Course Selected is: " + CourseSelected +
                "\nVenue Selected is: " + VenueSelected +
-               "\nNumber of Guests are: " + GuestCount.ToString() +
+               "\nNumber of Attendees are: " + GuestCount.ToString() +
                "\nBooking Cost was: €" + TripCost.ToString("0.00"), "Booking Successful", MessageBoxButtons.OK,
                MessageBoxIcon.Information);
 

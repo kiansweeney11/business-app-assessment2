@@ -829,7 +829,7 @@
             this.panel1.Controls.Add(this.SummaryButton);
             this.panel1.Controls.Add(this.ExitButton);
             this.panel1.Controls.Add(this.ClearButton);
-            this.panel1.Location = new System.Drawing.Point(1007, 400);
+            this.panel1.Location = new System.Drawing.Point(1007, 394);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 489);
             this.panel1.TabIndex = 22;
@@ -850,7 +850,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1573, 949);
+            this.ClientSize = new System.Drawing.Size(1573, 902);
             this.Controls.Add(this.DiscountLabelInformation);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.SummaryGroupBox);
