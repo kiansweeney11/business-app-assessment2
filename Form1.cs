@@ -47,12 +47,12 @@ namespace L2P_LTD
             const String VENUESLIGO = "Sligo";
 
             // course names
-            const String COURSEOPTION1 = "C# Fundamentals";
-            const String COURSEOPTION2 = "C# Basics for Beginners";
-            const String COURSEOPTION3 = "C# Intermediate";
-            const String COURSEOPTION4 = "C# Advanced Topics";
-            const String COURSEOPTION5 = "ASP.Net with C# Part A";
-            const String COURSEOPTION6 = "ASP.Net with C# Part B";
+            const String COURSEOPTIONFUNDAMENTALS = "C# Fundamentals";
+            const String COURSEOPTIONBASICS = "C# Basics for Beginners";
+            const String COURSEOPTIONINTERMEDIATE = "C# Intermediate";
+            const String COURSEOPTIONADVANCED = "C# Advanced Topics";
+            const String COURSEOPTIONPARTA = "ASP.Net with C# Part A";
+            const String COURSEOPTIONPARTB = "ASP.Net with C# Part B";
 
             // course lengths
             const int FUNDAMENTALSLENGTH = 2;
@@ -121,22 +121,22 @@ namespace L2P_LTD
                         switch (CourseIndex)
                         {
                             case 0:
-                                CourseSelected = COURSEOPTION1; CourseLength = FUNDAMENTALSLENGTH;
+                                CourseSelected = COURSEOPTIONFUNDAMENTALS; CourseLength = FUNDAMENTALSLENGTH;
                                 CourseSelectedPrice = FUNDAMENTALSFEE; break;
                             case 1:
-                                CourseSelected = COURSEOPTION2; CourseLength = BASICSLENGTH;
+                                CourseSelected = COURSEOPTIONBASICS; CourseLength = BASICSLENGTH;
                                 CourseSelectedPrice = BASICSFEE; break;
                             case 2:
-                                CourseSelected = COURSEOPTION3; CourseLength = INTERMEDIATELENGTH;
+                                CourseSelected = COURSEOPTIONINTERMEDIATE; CourseLength = INTERMEDIATELENGTH;
                                 CourseSelectedPrice = INTERMEDIATEFEE; break;
                             case 3:
-                                CourseSelected = COURSEOPTION4; CourseLength = ADVANCEDLENGTH;
+                                CourseSelected = COURSEOPTIONADVANCED; CourseLength = ADVANCEDLENGTH;
                                 CourseSelectedPrice = ADVANCEDFEE; break;
                             case 4:
-                                CourseSelected = COURSEOPTION5; CourseLength = ASPPARTALENGTH;
+                                CourseSelected = COURSEOPTIONPARTA; CourseLength = ASPPARTALENGTH;
                                 CourseSelectedPrice = ASPPARTAFEE; break;
                             case 5:
-                                CourseSelected = COURSEOPTION6; CourseLength = ASPPARTBLENGTH;
+                                CourseSelected = COURSEOPTIONPARTB; CourseLength = ASPPARTBLENGTH;
                                 CourseSelectedPrice = ASPPARTBFEE; break;
                         }
 
@@ -184,7 +184,7 @@ namespace L2P_LTD
                         TripCost = CourseFees + LodgingCost + OptionalCertCosts + SuiteFees;
 
                         // apply discounts
-                        if (GuestCount >= 3 && SuiteSelected != "Standard Suite")
+                        if (GuestCount >= 3 && SuiteSelected != STANDARDSUITE)
                         {
                             PriceReduction = TripCost * DISCOUNTRATE;
                             TripCost = TripCost - PriceReduction;
@@ -263,6 +263,7 @@ namespace L2P_LTD
                 this.AverageRevenueSummaryTextBox.Text = AverageRevenueTrip.ToString("C");
                 this.TotalDiscountedTextBox.Text = TotalNumberBookingsDiscount.ToString();
                 this.CertificateSummaryTextBox.Text = TotalOptionalCosts.ToString("C");
+                // change after all values verified
                 this.Text = "L2P LTD. Summary Data";
                 this.SummaryGroupBox.Visible = true;
                 this.DisplayGroupBox.Visible = false;
@@ -294,11 +295,6 @@ namespace L2P_LTD
             this.DisplayGroupBox.Visible = false;
             // reset title of form
             this.Text = "L2P LTD. Programming Courses Ireland";
-        }
-
-        private void Exit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         private void ExitButton_Click(object sender, EventArgs e)
         {
