@@ -367,7 +367,7 @@
             // 
             this.SummaryButton.BackColor = System.Drawing.SystemColors.Window;
             this.SummaryButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SummaryButton.Location = new System.Drawing.Point(86, 220);
+            this.SummaryButton.Location = new System.Drawing.Point(84, 220);
             this.SummaryButton.Name = "SummaryButton";
             this.SummaryButton.Size = new System.Drawing.Size(112, 34);
             this.SummaryButton.TabIndex = 8;
@@ -452,9 +452,9 @@
             this.DisplayGroupBox.Controls.Add(this.layCourseSelectedLabelDispa);
             this.DisplayGroupBox.Controls.Add(this.CourseFeesLabelDisplay);
             this.DisplayGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DisplayGroupBox.Location = new System.Drawing.Point(7, 400);
+            this.DisplayGroupBox.Location = new System.Drawing.Point(12, 400);
             this.DisplayGroupBox.Name = "DisplayGroupBox";
-            this.DisplayGroupBox.Size = new System.Drawing.Size(776, 489);
+            this.DisplayGroupBox.Size = new System.Drawing.Size(771, 483);
             this.DisplayGroupBox.TabIndex = 7;
             this.DisplayGroupBox.TabStop = false;
             this.DisplayGroupBox.Text = "Are These Booking Details Correct?";
@@ -678,9 +678,9 @@
             this.SummaryGroupBox.Controls.Add(this.TotalSalesLabelSummary);
             this.SummaryGroupBox.Controls.Add(this.NumberTransactionsSummary);
             this.SummaryGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SummaryGroupBox.Location = new System.Drawing.Point(6, 400);
+            this.SummaryGroupBox.Location = new System.Drawing.Point(12, 394);
             this.SummaryGroupBox.Name = "SummaryGroupBox";
-            this.SummaryGroupBox.Size = new System.Drawing.Size(777, 489);
+            this.SummaryGroupBox.Size = new System.Drawing.Size(771, 489);
             this.SummaryGroupBox.TabIndex = 21;
             this.SummaryGroupBox.TabStop = false;
             this.SummaryGroupBox.Text = "Company Summary Data";
@@ -850,7 +850,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1573, 1050);
+            this.ClientSize = new System.Drawing.Size(1573, 949);
             this.Controls.Add(this.DiscountLabelInformation);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.SummaryGroupBox);
