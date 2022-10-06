@@ -12,13 +12,14 @@ namespace L2P_LTD
 {
     public partial class L2PLTDForm : Form
     {
-        private decimal SummaryTransactionValue, SummaryLodgingValue, SummaryEnrollmentValue;
-        private decimal TripCost, AverageRevenueTrip, PriceReduction, OptionalCertCosts;
-        private int TotalNumberBookings, TotalNumberBookingsDiscount, GuestCount;
-        private string CourseSelected, VenueSelected, SuiteSelected;
-
-        private decimal CourseSelectedPrice, VenueSelectedPrice,
+        // decimal values global for historical company summary and book button
+        private decimal SummaryTransactionValue, SummaryLodgingValue, SummaryEnrollmentValue,
             LodgingCost, CourseFees, SuiteFees, TotalOptionalCosts;
+        private int TotalNumberBookings, TotalNumberBookingsDiscount, GuestCount;
+        // values needed for book button calculations
+        private decimal TripCost, PriceReduction, OptionalCertCosts;
+        // strings need to be global for book button
+        private string CourseSelected, VenueSelected, SuiteSelected;
 
         public L2PLTDForm()
         {
@@ -28,48 +29,63 @@ namespace L2P_LTD
         private void DisplayButton_Click(object sender, EventArgs e)
         {
             // constant prices per night for venues
-            const decimal KillarneyNight = 149.99m;
-            const decimal BelmulletNight = 219.99m;
-            const decimal DublinNight = 179.99m;
-            const decimal ClifdenNight = 119.99m;
-            const decimal CorkNight = 149.99m;
-            const decimal LetterkennyNight = 89.99m;
-            const decimal SligoNight = 119.99m;
+            const decimal KILLARNEYNIGHT = 149.99m;
+            const decimal BELLMULLETNIGHT = 219.99m;
+            const decimal DUBLINNIGHT = 179.99m;
+            const decimal CLIFDENNIGHT = 119.99m;
+            const decimal CORKNIGHT = 149.99m;
+            const decimal LETTERKENNYNIGHT = 89.99m;
+            const decimal SLIGONIGHT = 119.99m;
 
-            const String Venue1 = "Belmullet";
-            const String Venue2 = "Clifden";
-            const String Venue3 = "Cork";
-            const String Venue4 = "Dublin";
-            const String Venue5 = "Killarney";
-            const String Venue6 = "Letterkenny";
-            const String Venue7 = "Sligo";
+            // venues
+            const String VENUEBELLMULLET = "Belmullet";
+            const String VENUECLIFDEN = "Clifden";
+            const String VENUECORK = "Cork";
+            const String VENUEDUBLIN = "Dublin";
+            const String VENUEKILLARNEY = "Killarney";
+            const String VENUELETTERKENNY = "Letterkenny";
+            const String VENUESLIGO = "Sligo";
+
+            // course names
+            const String COURSEOPTION1 = "C# Fundamentals";
+            const String COURSEOPTION2 = "C# Basics for Beginners";
+            const String COURSEOPTION3 = "C# Intermediate";
+            const String COURSEOPTION4 = "C# Advanced Topics";
+            const String COURSEOPTION5 = "ASP.Net with C# Part A";
+            const String COURSEOPTION6 = "ASP.Net with C# Part B";
 
             // course lengths
-            const int FundamentalsLength = 2;
-            const int BasicsLength = 4;
-            const int IntermediateLength = 4;
-            const int AdvancedLength = 2;
-            const int ASPPartALength = 5;
-            const int ASPPartBLength = 5;
+            const int FUNDAMENTALSLENGTH = 2;
+            const int BASICSLENGTH = 4;
+            const int INTERMEDIATELENGTH = 4;
+            const int ADVANCEDLENGTH = 2;
+            const int ASPPARTALENGTH = 5;
+            const int ASPPARTBLENGTH = 5;
 
             // course fees
-            const int FundamentalsFee = 900;
-            const int BasicsFee = 1500;
-            const int IntermediateFee = 1800;
-            const int AdvancedFee = 2300;
-            const int ASPPartAFee = 1250;
-            const int ASPPartBFee = 1250;
+            const int FUNDAMENTALSFEE = 900;
+            const int BASICSFEE = 1500;
+            const int INTERMEDIATEFEE = 1800;
+            const int ADVANCEDFEE = 2300;
+            const int ASPPARTAFEE = 1250;
+            const int ASPPARTBFEE = 1250;
 
             // room upgrades
-            const decimal MasterSuiteCost = 99.99m;
-            const decimal ExecutiveSuiteCost = 69.99m;
-            const decimal JuniorSuiteCost = 49.99m;
+            const decimal MASTERSUITECOST = 99.99m;
+            const decimal EXECUTIVESUITECOST = 69.99m;
+            const decimal JUNIORSUITECOST = 49.99m;
+
+            // room types
+            const String MASTERSUITE = "Master Suite";
+            const String EXECUTIVESUITE = "Executive Suite";
+            const String JUNIORSUITE = "Junior Suite";
+            const String STANDARDSUITE = "Standard Suite";
 
             // digital cert cost
-            const decimal DigitalCert = 39.99m;
+            const decimal DIGITALCERT = 39.99m;
 
             // discount for three or more guests and special room
-            const decimal DiscountRate = 0.075m;
+            const decimal DISCOUNTRATE = 0.075m;
 
             // reset values if previous display / booking occurred
             PriceReduction = 0.00m;
@@ -77,8 +93,8 @@ namespace L2P_LTD
 
             int CourseIndex = 0, VenueIndex = 0, CourseLength = 0;
 
-            CourseSelectedPrice = 0.00m;
-            VenueSelectedPrice = 0.00m;
+            decimal CourseSelectedPrice = 0.00m;
+            decimal VenueSelectedPrice = 0.00m;
             LodgingCost = 0.00m;
             CourseFees = 0.00m;
             SuiteFees = 0.00m;
@@ -105,61 +121,60 @@ namespace L2P_LTD
                         switch (CourseIndex)
                         {
                             case 0:
-                                CourseSelected = "C# Fundamentals"; CourseLength = FundamentalsLength;
-                                CourseSelectedPrice = FundamentalsFee; break;
+                                CourseSelected = COURSEOPTION1; CourseLength = FUNDAMENTALSLENGTH;
+                                CourseSelectedPrice = FUNDAMENTALSFEE; break;
                             case 1:
-                                CourseSelected = "C# Basics for Beginners"; CourseLength = BasicsLength;
-                                CourseSelectedPrice = BasicsFee; break;
+                                CourseSelected = COURSEOPTION2; CourseLength = BASICSLENGTH;
+                                CourseSelectedPrice = BASICSFEE; break;
                             case 2:
-                                CourseSelected = "C# Intermediate"; CourseLength = IntermediateLength;
-                                CourseSelectedPrice = IntermediateFee; break;
+                                CourseSelected = COURSEOPTION3; CourseLength = INTERMEDIATELENGTH;
+                                CourseSelectedPrice = INTERMEDIATEFEE; break;
                             case 3:
-                                CourseSelected = "C# Advanced Topics"; CourseLength = AdvancedLength;
-                                CourseSelectedPrice = AdvancedFee; break;
+                                CourseSelected = COURSEOPTION4; CourseLength = ADVANCEDLENGTH;
+                                CourseSelectedPrice = ADVANCEDFEE; break;
                             case 4:
-                                CourseSelected = "ASP.Net with C# Part A"; CourseLength = ASPPartALength;
-                                CourseSelectedPrice = ASPPartAFee; break;
+                                CourseSelected = COURSEOPTION5; CourseLength = ASPPARTALENGTH;
+                                CourseSelectedPrice = ASPPARTAFEE; break;
                             case 5:
-                                CourseSelected = "ASP.Net with C# Part B"; CourseLength = ASPPartBLength;
-                                CourseSelectedPrice = ASPPartBFee; break;
+                                CourseSelected = COURSEOPTION6; CourseLength = ASPPARTBLENGTH;
+                                CourseSelectedPrice = ASPPARTBFEE; break;
                         }
 
                         switch (VenueIndex)
                         {
-                            case 0: VenueSelected = Venue1; VenueSelectedPrice = BelmulletNight; break;
-                            case 1: VenueSelected = Venue2; VenueSelectedPrice = ClifdenNight; break;
-                            case 2: VenueSelected = Venue3; VenueSelectedPrice = CorkNight; break;
-                            case 3: VenueSelected = Venue4; VenueSelectedPrice = DublinNight; break;
-                            case 4: VenueSelected = Venue5; VenueSelectedPrice = KillarneyNight; break;
-                            case 5: VenueSelected = Venue6; VenueSelectedPrice = LetterkennyNight; break;
-                            case 6: VenueSelected = Venue7; VenueSelectedPrice = SligoNight; break;
+                            case 0: VenueSelected = VENUEBELLMULLET; VenueSelectedPrice = BELLMULLETNIGHT; break;
+                            case 1: VenueSelected = VENUECLIFDEN; VenueSelectedPrice = CLIFDENNIGHT; break;
+                            case 2: VenueSelected = VENUECORK; VenueSelectedPrice = CORKNIGHT; break;
+                            case 3: VenueSelected = VENUEDUBLIN; VenueSelectedPrice = DUBLINNIGHT; break;
+                            case 4: VenueSelected = VENUEKILLARNEY; VenueSelectedPrice = KILLARNEYNIGHT; break;
+                            case 5: VenueSelected = VENUELETTERKENNY; VenueSelectedPrice = LETTERKENNYNIGHT; break;
+                            case 6: VenueSelected = VENUESLIGO; VenueSelectedPrice = SLIGONIGHT; break;
                         }
 
                         // check for user upgrading suite or not
                         if (MasterSuiteRadioButton.Checked)
                         {
-                            SuiteSelected = "Master Suite";
-                            SuiteFees += MasterSuiteCost * CourseLength;
+                            SuiteSelected = MASTERSUITE;
+                            SuiteFees += MASTERSUITECOST * CourseLength;
                         }
                         else if (ExecutiveRadioButton.Checked)
                         {
-                            SuiteSelected = "Executive Suite";
-                            SuiteFees += ExecutiveSuiteCost * CourseLength;
+                            SuiteSelected = EXECUTIVESUITE;
+                            SuiteFees += EXECUTIVESUITECOST * CourseLength;
                         }
                         else if (JuniorSuiteRadioButton.Checked)
                         {
-                            SuiteSelected = "Junior Suite";
-                            SuiteFees += JuniorSuiteCost * CourseLength;
+                            SuiteSelected = JUNIORSUITE;
+                            SuiteFees += JUNIORSUITECOST * CourseLength;
                         }
                         else if (StandardRadioButton.Checked)
                         {
-                            SuiteSelected = "Standard Suite";
-                            SuiteFees = 0.00m;
+                            SuiteSelected = STANDARDSUITE;
                         }
 
                         if (CheckBoxCertificate.Checked)
                         {
-                            OptionalCertCosts += DigitalCert * GuestCount;
+                            OptionalCertCosts += DIGITALCERT * GuestCount;
                         }
 
                         LodgingCost += VenueSelectedPrice * CourseLength;
@@ -171,23 +186,23 @@ namespace L2P_LTD
                         // apply discounts
                         if (GuestCount >= 3 && SuiteSelected != "Standard Suite")
                         {
-                            PriceReduction = TripCost * DiscountRate;
+                            PriceReduction = TripCost * DISCOUNTRATE;
                             TripCost = TripCost - PriceReduction;
                         }
 
-                        this.DisplayGroupBox.Visible = true;
-                        this.Text = "Booking Overview";
-
                         this.TextBoxGuestsDisplay.Text = GuestCount.ToString();
                         this.TextBoxCourseSelectedDisplay.Text = CourseSelected;
-                        this.TextBoxCourseFeesDisplay.Text = "€" + CourseFees.ToString("0.00");
+                        this.TextBoxCourseFeesDisplay.Text = CourseFees.ToString("C");
                         this.TextBoxVenueSelectedDisplay.Text = VenueSelected;
-                        this.TextBoxVenueFeesDisplay.Text = "€" + LodgingCost.ToString("0.00");
+                        this.TextBoxVenueFeesDisplay.Text = LodgingCost.ToString("C");
                         this.TextBoxSuiteSelectedDisplay.Text = SuiteSelected;
-                        this.TextBoxSuiteFeesDisplay.Text = "€" + SuiteFees.ToString("0.00");
-                        this.TextBoxCertificateFeesDisplay.Text = "€" + OptionalCertCosts.ToString("0.00");
-                        this.TextBoxDiscountDisplay.Text = "€" + PriceReduction.ToString("0.00");
-                        this.TextBoxTotalBookingDisplay.Text = "€" + TripCost.ToString("0.00");
+                        this.TextBoxSuiteFeesDisplay.Text = SuiteFees.ToString("C");
+                        this.TextBoxCertificateFeesDisplay.Text = OptionalCertCosts.ToString("C");
+                        this.TextBoxDiscountDisplay.Text = PriceReduction.ToString("C");
+                        this.TextBoxTotalBookingDisplay.Text = TripCost.ToString("C");
+
+                        this.DisplayGroupBox.Visible = true;
+                        this.Text = "Booking Overview";
 
                         BookButton.Focus();
                     }
@@ -210,49 +225,49 @@ namespace L2P_LTD
         private void BookButton_Click(object sender, EventArgs e)
         {
             // message box to confirm booking
-            MessageBox.Show("Your booking was Successful." +
+            var Confirm = MessageBox.Show("Confirmation of selected booking details:" +
                "\nThe Course Selected is: " + CourseSelected +
                "\nVenue Selected is: " + VenueSelected +
                "\nNumber of Attendees are: " + GuestCount.ToString() +
-               "\nBooking Cost was: €" + TripCost.ToString("0.00"), "Booking Successful", MessageBoxButtons.OK,
+               "\nBooking Cost was: " + TripCost.ToString("C"), "Confirm Booking?", MessageBoxButtons.OKCancel,
                MessageBoxIcon.Information);
 
-            // add summary stats
-            SummaryTransactionValue += TripCost;
-            SummaryLodgingValue += LodgingCost;
-            SummaryEnrollmentValue += CourseFees;
-            TotalOptionalCosts += OptionalCertCosts + SuiteFees;
-            TotalNumberBookings += 1;
+            // If the OK button pressed
+            if (Confirm == DialogResult.OK)
+            {
+                // add summary stats
+                SummaryTransactionValue += TripCost;
+                SummaryLodgingValue += LodgingCost;
+                SummaryEnrollmentValue += CourseFees;
+                TotalOptionalCosts += OptionalCertCosts + SuiteFees;
+                TotalNumberBookings += 1;
 
+                if (PriceReduction > 0)
+                {
+                    TotalNumberBookingsDiscount += 1;
+                }
+            }
             // change form header after message box cleared
             this.Text = "L2P LTD. Programming Courses Ireland";
-
-            if (PriceReduction > 0)
-            {
-                TotalNumberBookingsDiscount += 1;
-            }
         }
 
         private void SummaryButton_Click(object sender, EventArgs e)
         {
-            try
+            if (TotalNumberBookings > 0)
             {
-                if (TotalNumberBookings > 0)
-                {
-                    this.Text = "L2P LTD. Summary Data";
-                    this.SummaryGroupBox.Visible = true;
-                    this.DisplayGroupBox.Visible = false;
-                    this.TotalSummaryTranasctionsTextBox.Text = TotalNumberBookings.ToString();
-                    this.TotalSummarySalesTextBox.Text = "€" + SummaryTransactionValue.ToString("0.00");
-                    this.TotalEnrollmentFeesTextBox.Text = "€" + SummaryEnrollmentValue.ToString();
-                    this.TotalLodgingFeesTextBox.Text = "€" + SummaryLodgingValue.ToString("0.00");
-                    AverageRevenueTrip = SummaryTransactionValue / TotalNumberBookings;
-                    this.AverageRevenueSummaryTextBox.Text = "€" + AverageRevenueTrip.ToString("0.00");
-                    this.TotalDiscountedTextBox.Text = TotalNumberBookingsDiscount.ToString();
-                    this.CertificateSummaryTextBox.Text = "€" + TotalOptionalCosts.ToString("0.00");
-                }
+                this.TotalSummaryTranasctionsTextBox.Text = TotalNumberBookings.ToString();
+                this.TotalSummarySalesTextBox.Text = SummaryTransactionValue.ToString("C");
+                this.TotalEnrollmentFeesTextBox.Text = SummaryEnrollmentValue.ToString("C");
+                this.TotalLodgingFeesTextBox.Text = SummaryLodgingValue.ToString("C");
+                decimal AverageRevenueTrip = SummaryTransactionValue / TotalNumberBookings;
+                this.AverageRevenueSummaryTextBox.Text = AverageRevenueTrip.ToString("C");
+                this.TotalDiscountedTextBox.Text = TotalNumberBookingsDiscount.ToString();
+                this.CertificateSummaryTextBox.Text = TotalOptionalCosts.ToString("C");
+                this.Text = "L2P LTD. Summary Data";
+                this.SummaryGroupBox.Visible = true;
+                this.DisplayGroupBox.Visible = false;
             }
-            catch
+            else
             {
                 MessageBox.Show("There are no transactions to show." +
                             "\nPlease ensure there are transactions made.",
@@ -263,10 +278,6 @@ namespace L2P_LTD
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            this.SummaryGroupBox.Visible = false;
-            this.DisplayGroupBox.Visible = false;
-            // reset title of form
-            this.Text = "L2P LTD. Programming Courses Ireland";
             this.GuestTextBox.Text = "0";
             // have no default selection on listbox
             this.ListBoxVenue.SelectedIndex = -1;
@@ -278,6 +289,11 @@ namespace L2P_LTD
             this.ExecutiveRadioButton.Checked = false;
             this.JuniorSuiteRadioButton.Checked = false;
             this.MasterSuiteRadioButton.Checked = false;
+            // hide summary and display
+            this.SummaryGroupBox.Visible = false;
+            this.DisplayGroupBox.Visible = false;
+            // reset title of form
+            this.Text = "L2P LTD. Programming Courses Ireland";
         }
 
         private void Exit_Click(object sender, EventArgs e)
