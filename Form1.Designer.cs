@@ -332,9 +332,9 @@
             this.CheckBoxCertificate.AutoSize = true;
             this.CheckBoxCertificate.Location = new System.Drawing.Point(18, 43);
             this.CheckBoxCertificate.Name = "CheckBoxCertificate";
-            this.CheckBoxCertificate.Size = new System.Drawing.Size(287, 54);
+            this.CheckBoxCertificate.Size = new System.Drawing.Size(317, 54);
             this.CheckBoxCertificate.TabIndex = 0;
-            this.CheckBoxCertificate.Text = "Digital Certificate \r\n(Additional €39.99 Per Guest)";
+            this.CheckBoxCertificate.Text = "Digital Certificate \r\n(Additional €39.99 Per Attendee)";
             this.CheckBoxCertificate.UseVisualStyleBackColor = true;
             // 
             // DisplayButton

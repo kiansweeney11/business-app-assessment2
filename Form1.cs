@@ -84,6 +84,7 @@ namespace L2P_LTD
             CourseFees = 0.00m;
             SuiteFees = 0.00m;
 
+            // if statements to check if listboxes have a selection made
             if (ListBoxCourse.SelectedIndex != -1)
             {   
                 if(ListBoxVenue.SelectedIndex != -1)
@@ -175,10 +176,6 @@ namespace L2P_LTD
                             TripCost = TripCost - PriceReduction;
                         }
 
-                        //this.CourseGroupBox.Visible = false;
-                        //this.VenueGroupBox.Visible = false;
-                        //this.CertificateGroupBox.Visible = false;
-                        //this.GroupBoxUpgrades.Visible = false;
                         this.DisplayGroupBox.Visible = true;
                         this.Text = "Booking Overview";
 
@@ -228,6 +225,9 @@ namespace L2P_LTD
             SummaryCertCosts += OptionalCosts;
             TotalNumberBookings += 1;
 
+            // change form header after message box cleared
+            this.Text = "L2P LTD. Programming Courses Ireland";
+
             if(PriceReduction > 0)
             {
                 TotalNumberBookingsDiscount += 1;
@@ -268,17 +268,13 @@ namespace L2P_LTD
             this.DisplayGroupBox.Visible = false;
             // reset title of form
             this.Text = "L2P LTD. Programming Courses Ireland";
-            this.CourseGroupBox.Visible = true;
-            this.VenueGroupBox.Visible = true;
-            this.CertificateGroupBox.Visible = true;
-            this.GroupBoxUpgrades.Visible = true;
             this.GuestTextBox.Text = "0";
             // have no default selection on listbox
             this.ListBoxVenue.SelectedIndex = -1;
             this.ListBoxCourse.SelectedIndex = -1;
             // uncheck checkbox if digital cert selected
             this.CheckBoxCertificate.Checked = false;
-            // radio buttons
+            // radio buttons - leave standard as default selected
             this.StandardRadioButton.Checked = true;
             this.ExecutiveRadioButton.Checked = false;
             this.JuniorSuiteRadioButton.Checked = false;
