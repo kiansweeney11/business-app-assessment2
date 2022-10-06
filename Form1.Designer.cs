@@ -698,11 +698,11 @@
             // 
             this.DigitalCertSummaryLabel.AutoSize = true;
             this.DigitalCertSummaryLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DigitalCertSummaryLabel.Location = new System.Drawing.Point(127, 314);
+            this.DigitalCertSummaryLabel.Location = new System.Drawing.Point(127, 315);
             this.DigitalCertSummaryLabel.Name = "DigitalCertSummaryLabel";
-            this.DigitalCertSummaryLabel.Size = new System.Drawing.Size(235, 28);
+            this.DigitalCertSummaryLabel.Size = new System.Drawing.Size(203, 28);
             this.DigitalCertSummaryLabel.TabIndex = 26;
-            this.DigitalCertSummaryLabel.Text = "Total Digital Certificate";
+            this.DigitalCertSummaryLabel.Text = "Total Optional Costs";
             // 
             // TotalDiscountedTextBox
             // 
@@ -756,7 +756,7 @@
             // 
             this.AverageBookingSummaryLabel.AutoSize = true;
             this.AverageBookingSummaryLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AverageBookingSummaryLabel.Location = new System.Drawing.Point(126, 194);
+            this.AverageBookingSummaryLabel.Location = new System.Drawing.Point(126, 196);
             this.AverageBookingSummaryLabel.Name = "AverageBookingSummaryLabel";
             this.AverageBookingSummaryLabel.Size = new System.Drawing.Size(297, 28);
             this.AverageBookingSummaryLabel.TabIndex = 5;
@@ -766,7 +766,7 @@
             // 
             this.NumberDiscountedBookingsLabel.AutoSize = true;
             this.NumberDiscountedBookingsLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NumberDiscountedBookingsLabel.Location = new System.Drawing.Point(127, 152);
+            this.NumberDiscountedBookingsLabel.Location = new System.Drawing.Point(127, 153);
             this.NumberDiscountedBookingsLabel.Name = "NumberDiscountedBookingsLabel";
             this.NumberDiscountedBookingsLabel.Size = new System.Drawing.Size(265, 28);
             this.NumberDiscountedBookingsLabel.TabIndex = 4;
@@ -776,7 +776,7 @@
             // 
             this.LodgingFeesSummaryLabel.AutoSize = true;
             this.LodgingFeesSummaryLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LodgingFeesSummaryLabel.Location = new System.Drawing.Point(127, 277);
+            this.LodgingFeesSummaryLabel.Location = new System.Drawing.Point(127, 275);
             this.LodgingFeesSummaryLabel.Name = "LodgingFeesSummaryLabel";
             this.LodgingFeesSummaryLabel.Size = new System.Drawing.Size(188, 28);
             this.LodgingFeesSummaryLabel.TabIndex = 3;
@@ -786,7 +786,7 @@
             // 
             this.EnrollmentFeesSummaryLabel.AutoSize = true;
             this.EnrollmentFeesSummaryLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.EnrollmentFeesSummaryLabel.Location = new System.Drawing.Point(127, 115);
+            this.EnrollmentFeesSummaryLabel.Location = new System.Drawing.Point(127, 116);
             this.EnrollmentFeesSummaryLabel.Name = "EnrollmentFeesSummaryLabel";
             this.EnrollmentFeesSummaryLabel.Size = new System.Drawing.Size(216, 28);
             this.EnrollmentFeesSummaryLabel.TabIndex = 2;
@@ -796,7 +796,7 @@
             // 
             this.TotalSalesLabelSummary.AutoSize = true;
             this.TotalSalesLabelSummary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TotalSalesLabelSummary.Location = new System.Drawing.Point(127, 237);
+            this.TotalSalesLabelSummary.Location = new System.Drawing.Point(127, 238);
             this.TotalSalesLabelSummary.Name = "TotalSalesLabelSummary";
             this.TotalSalesLabelSummary.Size = new System.Drawing.Size(113, 28);
             this.TotalSalesLabelSummary.TabIndex = 1;
@@ -806,7 +806,7 @@
             // 
             this.NumberTransactionsSummary.AutoSize = true;
             this.NumberTransactionsSummary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NumberTransactionsSummary.Location = new System.Drawing.Point(127, 78);
+            this.NumberTransactionsSummary.Location = new System.Drawing.Point(127, 79);
             this.NumberTransactionsSummary.Name = "NumberTransactionsSummary";
             this.NumberTransactionsSummary.Size = new System.Drawing.Size(183, 28);
             this.NumberTransactionsSummary.TabIndex = 0;

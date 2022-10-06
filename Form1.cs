@@ -12,14 +12,13 @@ namespace L2P_LTD
 {
     public partial class L2PLTDForm : Form
     {
-        private decimal SummaryTransactionValue, SummaryLodgingValue, SummaryEnrollmentValue,
-            SummaryCertCosts;
-        private decimal TripCost, AverageRevenueTrip, PriceReduction, OptionalCosts;
+        private decimal SummaryTransactionValue, SummaryLodgingValue, SummaryEnrollmentValue;
+        private decimal TripCost, AverageRevenueTrip, PriceReduction, OptionalCertCosts;
         private int TotalNumberBookings, TotalNumberBookingsDiscount, GuestCount;
         private string CourseSelected, VenueSelected, SuiteSelected;
 
         private decimal CourseSelectedPrice, VenueSelectedPrice,
-            LodgingCost, CourseFees, SuiteFees;
+            LodgingCost, CourseFees, SuiteFees, TotalOptionalCosts;
 
         public L2PLTDForm()
         {
@@ -74,7 +73,7 @@ namespace L2P_LTD
 
             // reset values if previous display / booking occurred
             PriceReduction = 0.00m;
-            OptionalCosts = 0.00m;
+            OptionalCertCosts = 0.00m;
 
             int CourseIndex = 0, VenueIndex = 0, CourseLength = 0;
 
@@ -86,8 +85,8 @@ namespace L2P_LTD
 
             // if statements to check if listboxes have a selection made
             if (ListBoxCourse.SelectedIndex != -1)
-            {   
-                if(ListBoxVenue.SelectedIndex != -1)
+            {
+                if (ListBoxVenue.SelectedIndex != -1)
                 {
                     // User input is validated against negative and decimals.
                     if (!int.TryParse(GuestTextBox.Text, out GuestCount) ||
@@ -160,14 +159,14 @@ namespace L2P_LTD
 
                         if (CheckBoxCertificate.Checked)
                         {
-                            OptionalCosts += DigitalCert * GuestCount;
+                            OptionalCertCosts += DigitalCert * GuestCount;
                         }
 
                         LodgingCost += VenueSelectedPrice * CourseLength;
                         CourseFees = CourseSelectedPrice * GuestCount;
 
                         // overall trip cost
-                        TripCost = CourseFees + LodgingCost + OptionalCosts + SuiteFees;
+                        TripCost = CourseFees + LodgingCost + OptionalCertCosts + SuiteFees;
 
                         // apply discounts
                         if (GuestCount >= 3 && SuiteSelected != "Standard Suite")
@@ -186,7 +185,7 @@ namespace L2P_LTD
                         this.TextBoxVenueFeesDisplay.Text = "€" + LodgingCost.ToString("0.00");
                         this.TextBoxSuiteSelectedDisplay.Text = SuiteSelected;
                         this.TextBoxSuiteFeesDisplay.Text = "€" + SuiteFees.ToString("0.00");
-                        this.TextBoxCertificateFeesDisplay.Text = "€" + OptionalCosts.ToString("0.00");
+                        this.TextBoxCertificateFeesDisplay.Text = "€" + OptionalCertCosts.ToString("0.00");
                         this.TextBoxDiscountDisplay.Text = "€" + PriceReduction.ToString("0.00");
                         this.TextBoxTotalBookingDisplay.Text = "€" + TripCost.ToString("0.00");
 
@@ -222,13 +221,13 @@ namespace L2P_LTD
             SummaryTransactionValue += TripCost;
             SummaryLodgingValue += LodgingCost;
             SummaryEnrollmentValue += CourseFees;
-            SummaryCertCosts += OptionalCosts;
+            TotalOptionalCosts += OptionalCertCosts + SuiteFees;
             TotalNumberBookings += 1;
 
             // change form header after message box cleared
             this.Text = "L2P LTD. Programming Courses Ireland";
 
-            if(PriceReduction > 0)
+            if (PriceReduction > 0)
             {
                 TotalNumberBookingsDiscount += 1;
             }
@@ -238,7 +237,7 @@ namespace L2P_LTD
         {
             try
             {
-                if(TotalNumberBookings > 0)
+                if (TotalNumberBookings > 0)
                 {
                     this.Text = "L2P LTD. Summary Data";
                     this.SummaryGroupBox.Visible = true;
@@ -250,7 +249,7 @@ namespace L2P_LTD
                     AverageRevenueTrip = SummaryTransactionValue / TotalNumberBookings;
                     this.AverageRevenueSummaryTextBox.Text = "€" + AverageRevenueTrip.ToString("0.00");
                     this.TotalDiscountedTextBox.Text = TotalNumberBookingsDiscount.ToString();
-                    this.CertificateSummaryTextBox.Text = "€" + SummaryCertCosts.ToString("0.00");
+                    this.CertificateSummaryTextBox.Text = "€" + TotalOptionalCosts.ToString("0.00");
                 }
             }
             catch
@@ -259,7 +258,7 @@ namespace L2P_LTD
                             "\nPlease ensure there are transactions made.",
                             "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-          
+
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
