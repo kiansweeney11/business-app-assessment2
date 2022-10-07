@@ -28,6 +28,8 @@ namespace L2P_LTD
             InitializeComponent();
             this.GuestTextBox.Text = "0";
         }
+
+        // generate quote for customers after options selected
         private void DisplayButton_Click(object sender, EventArgs e)
         {
             // constant prices per night for venues
@@ -224,6 +226,8 @@ namespace L2P_LTD
 
         }
 
+        // confirm booking of previous quote
+        // only confirmed if ok button is pressed
         private void BookButton_Click(object sender, EventArgs e)
         {
             // message box to confirm booking
@@ -253,6 +257,7 @@ namespace L2P_LTD
             this.Text = "L2P LTD. Programming Courses Ireland";
         }
 
+        // summary button to show historical company transaction history
         private void SummaryButton_Click(object sender, EventArgs e)
         {
             if (TotalNumberBookings > 0)
@@ -279,6 +284,8 @@ namespace L2P_LTD
 
         }
 
+        // clear form for generating new quotation
+        // reset selected values from previous quote
         private void ClearButton_Click(object sender, EventArgs e)
         {
             this.GuestTextBox.Text = "0";
