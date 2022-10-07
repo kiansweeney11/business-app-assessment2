@@ -99,7 +99,7 @@
             this.TotalSalesLabelSummary = new System.Windows.Forms.Label();
             this.NumberTransactionsSummary = new System.Windows.Forms.Label();
             this.TransactionCountSummary = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ButtonPanels = new System.Windows.Forms.Panel();
             this.DiscountLabelInformation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DefaultPictureBox)).BeginInit();
             this.StartPanel.SuspendLayout();
@@ -109,7 +109,7 @@
             this.CertificateGroupBox.SuspendLayout();
             this.DisplayGroupBox.SuspendLayout();
             this.SummaryGroupBox.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.ButtonPanels.SuspendLayout();
             this.SuspendLayout();
             // 
             // DefaultPictureBox
@@ -821,18 +821,18 @@
             this.TransactionCountSummary.TabIndex = 0;
             this.TransactionCountSummary.Text = "Number Transactions";
             // 
-            // panel1
+            // ButtonPanels
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
-            this.panel1.Controls.Add(this.DisplayButton);
-            this.panel1.Controls.Add(this.BookButton);
-            this.panel1.Controls.Add(this.SummaryButton);
-            this.panel1.Controls.Add(this.ExitButton);
-            this.panel1.Controls.Add(this.ClearButton);
-            this.panel1.Location = new System.Drawing.Point(1007, 394);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 489);
-            this.panel1.TabIndex = 22;
+            this.ButtonPanels.BackColor = System.Drawing.SystemColors.Window;
+            this.ButtonPanels.Controls.Add(this.DisplayButton);
+            this.ButtonPanels.Controls.Add(this.BookButton);
+            this.ButtonPanels.Controls.Add(this.SummaryButton);
+            this.ButtonPanels.Controls.Add(this.ExitButton);
+            this.ButtonPanels.Controls.Add(this.ClearButton);
+            this.ButtonPanels.Location = new System.Drawing.Point(1007, 394);
+            this.ButtonPanels.Name = "ButtonPanels";
+            this.ButtonPanels.Size = new System.Drawing.Size(300, 489);
+            this.ButtonPanels.TabIndex = 22;
             // 
             // DiscountLabelInformation
             // 
@@ -852,7 +852,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1573, 902);
             this.Controls.Add(this.DiscountLabelInformation);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ButtonPanels);
             this.Controls.Add(this.SummaryGroupBox);
             this.Controls.Add(this.DisplayGroupBox);
             this.Controls.Add(this.CertificateGroupBox);
@@ -879,7 +879,7 @@
             this.DisplayGroupBox.PerformLayout();
             this.SummaryGroupBox.ResumeLayout(false);
             this.SummaryGroupBox.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.ButtonPanels.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -956,7 +956,7 @@
         private Label DigitalCertSummaryLabel;
         private Label TransactionCountSummary;
         private TextBox CertificateSummaryTextBox;
-        private Panel panel1;
+        private Panel ButtonPanels;
         private Label DiscountLabelInformation;
     }
 }
