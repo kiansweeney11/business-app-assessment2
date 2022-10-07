@@ -95,6 +95,7 @@ namespace L2P_LTD
 
             decimal CourseSelectedPrice = 0.00m;
             decimal VenueSelectedPrice = 0.00m;
+            decimal OptionalsDisplay = 0.00m;
             LodgingCost = 0.00m;
             CourseFees = 0.00m;
             SuiteFees = 0.00m;
@@ -179,6 +180,7 @@ namespace L2P_LTD
 
                         LodgingCost += VenueSelectedPrice * CourseLength;
                         CourseFees = CourseSelectedPrice * GuestCount;
+                        OptionalsDisplay = OptionalCertCosts + SuiteFees;
 
                         // overall trip cost
                         TripCost = CourseFees + LodgingCost + OptionalCertCosts + SuiteFees;
@@ -195,9 +197,7 @@ namespace L2P_LTD
                         this.TextBoxCourseFeesDisplay.Text = CourseFees.ToString("C");
                         this.TextBoxVenueSelectedDisplay.Text = VenueSelected;
                         this.TextBoxVenueFeesDisplay.Text = LodgingCost.ToString("C");
-                        this.TextBoxSuiteSelectedDisplay.Text = SuiteSelected;
-                        this.TextBoxSuiteFeesDisplay.Text = SuiteFees.ToString("C");
-                        this.TextBoxCertificateFeesDisplay.Text = OptionalCertCosts.ToString("C");
+                        this.TextBoxCertificateFeesDisplay.Text = OptionalsDisplay.ToString("C");
                         this.TextBoxDiscountDisplay.Text = PriceReduction.ToString("C");
                         this.TextBoxTotalBookingDisplay.Text = TripCost.ToString("C");
 
