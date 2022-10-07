@@ -3,7 +3,9 @@
 // MS806: Assignment 2
 // Due Date: 14/10/22
 // L2P Ltd, is a company that provides residential software
-// programming courses in locations across Ireland
+// programming courses in locations across Ireland.
+// The purpose of your application is to enable the front of
+// house sales team to generate pricing and process bookings for their courses
 
 using System.Security.Cryptography;
 using System.Windows.Forms;
@@ -295,6 +297,8 @@ namespace L2P_LTD
             this.DisplayGroupBox.Visible = false;
             // reset title of form
             this.Text = "L2P LTD. Programming Courses Ireland";
+            // focus on Display after resetting form for next booking
+            DisplayButton.Focus();
         }
         private void ExitButton_Click(object sender, EventArgs e)
         {
