@@ -62,6 +62,8 @@
             this.ToolTipClear = new System.Windows.Forms.ToolTip(this.components);
             this.ToolTipExit = new System.Windows.Forms.ToolTip(this.components);
             this.DisplayGroupBox = new System.Windows.Forms.GroupBox();
+            this.PricePreDiscountTextBox = new System.Windows.Forms.TextBox();
+            this.PriceSubTotalDiscount = new System.Windows.Forms.Label();
             this.OptionalCostsDisplayLabel = new System.Windows.Forms.Label();
             this.CheckBookingDisplayLabel = new System.Windows.Forms.Label();
             this.TextBoxGuestsDisplay = new System.Windows.Forms.TextBox();
@@ -426,6 +428,8 @@
             // DisplayGroupBox
             // 
             this.DisplayGroupBox.BackColor = System.Drawing.SystemColors.Window;
+            this.DisplayGroupBox.Controls.Add(this.PricePreDiscountTextBox);
+            this.DisplayGroupBox.Controls.Add(this.PriceSubTotalDiscount);
             this.DisplayGroupBox.Controls.Add(this.OptionalCostsDisplayLabel);
             this.DisplayGroupBox.Controls.Add(this.CheckBookingDisplayLabel);
             this.DisplayGroupBox.Controls.Add(this.TextBoxGuestsDisplay);
@@ -446,17 +450,36 @@
             this.DisplayGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.DisplayGroupBox.Location = new System.Drawing.Point(12, 394);
             this.DisplayGroupBox.Name = "DisplayGroupBox";
-            this.DisplayGroupBox.Size = new System.Drawing.Size(771, 486);
+            this.DisplayGroupBox.Size = new System.Drawing.Size(771, 489);
             this.DisplayGroupBox.TabIndex = 7;
             this.DisplayGroupBox.TabStop = false;
             this.DisplayGroupBox.Text = "Are These Booking Details Correct?";
             this.DisplayGroupBox.Visible = false;
             // 
+            // PricePreDiscountTextBox
+            // 
+            this.PricePreDiscountTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PricePreDiscountTextBox.Location = new System.Drawing.Point(379, 321);
+            this.PricePreDiscountTextBox.Name = "PricePreDiscountTextBox";
+            this.PricePreDiscountTextBox.Size = new System.Drawing.Size(317, 34);
+            this.PricePreDiscountTextBox.TabIndex = 24;
+            this.PricePreDiscountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // PriceSubTotalDiscount
+            // 
+            this.PriceSubTotalDiscount.AutoSize = true;
+            this.PriceSubTotalDiscount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PriceSubTotalDiscount.Location = new System.Drawing.Point(143, 322);
+            this.PriceSubTotalDiscount.Name = "PriceSubTotalDiscount";
+            this.PriceSubTotalDiscount.Size = new System.Drawing.Size(218, 28);
+            this.PriceSubTotalDiscount.TabIndex = 23;
+            this.PriceSubTotalDiscount.Text = "Price Before Discount";
+            // 
             // OptionalCostsDisplayLabel
             // 
             this.OptionalCostsDisplayLabel.AutoSize = true;
             this.OptionalCostsDisplayLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.OptionalCostsDisplayLabel.Location = new System.Drawing.Point(143, 290);
+            this.OptionalCostsDisplayLabel.Location = new System.Drawing.Point(143, 274);
             this.OptionalCostsDisplayLabel.Name = "OptionalCostsDisplayLabel";
             this.OptionalCostsDisplayLabel.Size = new System.Drawing.Size(150, 28);
             this.OptionalCostsDisplayLabel.TabIndex = 22;
@@ -466,7 +489,7 @@
             // 
             this.CheckBookingDisplayLabel.AutoSize = true;
             this.CheckBookingDisplayLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.CheckBookingDisplayLabel.Location = new System.Drawing.Point(143, 431);
+            this.CheckBookingDisplayLabel.Location = new System.Drawing.Point(143, 455);
             this.CheckBookingDisplayLabel.Name = "CheckBookingDisplayLabel";
             this.CheckBookingDisplayLabel.Size = new System.Drawing.Size(391, 28);
             this.CheckBookingDisplayLabel.TabIndex = 20;
@@ -475,7 +498,7 @@
             // TextBoxGuestsDisplay
             // 
             this.TextBoxGuestsDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TextBoxGuestsDisplay.Location = new System.Drawing.Point(379, 40);
+            this.TextBoxGuestsDisplay.Location = new System.Drawing.Point(379, 33);
             this.TextBoxGuestsDisplay.Name = "TextBoxGuestsDisplay";
             this.TextBoxGuestsDisplay.Size = new System.Drawing.Size(317, 34);
             this.TextBoxGuestsDisplay.TabIndex = 19;
@@ -484,7 +507,7 @@
             // TextBoxCourseSelectedDisplay
             // 
             this.TextBoxCourseSelectedDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TextBoxCourseSelectedDisplay.Location = new System.Drawing.Point(379, 89);
+            this.TextBoxCourseSelectedDisplay.Location = new System.Drawing.Point(379, 81);
             this.TextBoxCourseSelectedDisplay.Name = "TextBoxCourseSelectedDisplay";
             this.TextBoxCourseSelectedDisplay.Size = new System.Drawing.Size(317, 34);
             this.TextBoxCourseSelectedDisplay.TabIndex = 18;
@@ -493,7 +516,7 @@
             // TextBoxCourseFeesDisplay
             // 
             this.TextBoxCourseFeesDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TextBoxCourseFeesDisplay.Location = new System.Drawing.Point(379, 138);
+            this.TextBoxCourseFeesDisplay.Location = new System.Drawing.Point(379, 129);
             this.TextBoxCourseFeesDisplay.Name = "TextBoxCourseFeesDisplay";
             this.TextBoxCourseFeesDisplay.Size = new System.Drawing.Size(317, 34);
             this.TextBoxCourseFeesDisplay.TabIndex = 17;
@@ -502,7 +525,7 @@
             // TextBoxVenueSelectedDisplay
             // 
             this.TextBoxVenueSelectedDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TextBoxVenueSelectedDisplay.Location = new System.Drawing.Point(379, 187);
+            this.TextBoxVenueSelectedDisplay.Location = new System.Drawing.Point(379, 177);
             this.TextBoxVenueSelectedDisplay.Name = "TextBoxVenueSelectedDisplay";
             this.TextBoxVenueSelectedDisplay.Size = new System.Drawing.Size(317, 34);
             this.TextBoxVenueSelectedDisplay.TabIndex = 16;
@@ -511,7 +534,7 @@
             // TextBoxVenueFeesDisplay
             // 
             this.TextBoxVenueFeesDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TextBoxVenueFeesDisplay.Location = new System.Drawing.Point(379, 236);
+            this.TextBoxVenueFeesDisplay.Location = new System.Drawing.Point(379, 225);
             this.TextBoxVenueFeesDisplay.Name = "TextBoxVenueFeesDisplay";
             this.TextBoxVenueFeesDisplay.Size = new System.Drawing.Size(317, 34);
             this.TextBoxVenueFeesDisplay.TabIndex = 15;
@@ -520,7 +543,7 @@
             // TextBoxCertificateFeesDisplay
             // 
             this.TextBoxCertificateFeesDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TextBoxCertificateFeesDisplay.Location = new System.Drawing.Point(379, 285);
+            this.TextBoxCertificateFeesDisplay.Location = new System.Drawing.Point(379, 273);
             this.TextBoxCertificateFeesDisplay.Name = "TextBoxCertificateFeesDisplay";
             this.TextBoxCertificateFeesDisplay.Size = new System.Drawing.Size(317, 34);
             this.TextBoxCertificateFeesDisplay.TabIndex = 12;
@@ -529,7 +552,7 @@
             // TextBoxDiscountDisplay
             // 
             this.TextBoxDiscountDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TextBoxDiscountDisplay.Location = new System.Drawing.Point(379, 334);
+            this.TextBoxDiscountDisplay.Location = new System.Drawing.Point(379, 369);
             this.TextBoxDiscountDisplay.Name = "TextBoxDiscountDisplay";
             this.TextBoxDiscountDisplay.Size = new System.Drawing.Size(317, 34);
             this.TextBoxDiscountDisplay.TabIndex = 11;
@@ -538,7 +561,7 @@
             // TextBoxTotalBookingDisplay
             // 
             this.TextBoxTotalBookingDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TextBoxTotalBookingDisplay.Location = new System.Drawing.Point(379, 383);
+            this.TextBoxTotalBookingDisplay.Location = new System.Drawing.Point(379, 417);
             this.TextBoxTotalBookingDisplay.Name = "TextBoxTotalBookingDisplay";
             this.TextBoxTotalBookingDisplay.Size = new System.Drawing.Size(317, 34);
             this.TextBoxTotalBookingDisplay.TabIndex = 10;
@@ -548,7 +571,7 @@
             // 
             this.GuestNumberLabelDisplay.AutoSize = true;
             this.GuestNumberLabelDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.GuestNumberLabelDisplay.Location = new System.Drawing.Point(143, 43);
+            this.GuestNumberLabelDisplay.Location = new System.Drawing.Point(143, 34);
             this.GuestNumberLabelDisplay.Name = "GuestNumberLabelDisplay";
             this.GuestNumberLabelDisplay.Size = new System.Drawing.Size(184, 28);
             this.GuestNumberLabelDisplay.TabIndex = 9;
@@ -558,7 +581,7 @@
             // 
             this.DiscountLabelDisplay.AutoSize = true;
             this.DiscountLabelDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DiscountLabelDisplay.Location = new System.Drawing.Point(143, 337);
+            this.DiscountLabelDisplay.Location = new System.Drawing.Point(143, 370);
             this.DiscountLabelDisplay.Name = "DiscountLabelDisplay";
             this.DiscountLabelDisplay.Size = new System.Drawing.Size(96, 28);
             this.DiscountLabelDisplay.TabIndex = 8;
@@ -568,17 +591,17 @@
             // 
             this.TotalCostLabelDisplay.AutoSize = true;
             this.TotalCostLabelDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TotalCostLabelDisplay.Location = new System.Drawing.Point(143, 386);
+            this.TotalCostLabelDisplay.Location = new System.Drawing.Point(143, 418);
             this.TotalCostLabelDisplay.Name = "TotalCostLabelDisplay";
-            this.TotalCostLabelDisplay.Size = new System.Drawing.Size(190, 28);
+            this.TotalCostLabelDisplay.Size = new System.Drawing.Size(188, 28);
             this.TotalCostLabelDisplay.TabIndex = 7;
-            this.TotalCostLabelDisplay.Text = "Total Booking Cost";
+            this.TotalCostLabelDisplay.Text = "Final Booking Cost";
             // 
             // VenueFeesLabelDisplay
             // 
             this.VenueFeesLabelDisplay.AutoSize = true;
             this.VenueFeesLabelDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.VenueFeesLabelDisplay.Location = new System.Drawing.Point(143, 239);
+            this.VenueFeesLabelDisplay.Location = new System.Drawing.Point(143, 226);
             this.VenueFeesLabelDisplay.Name = "VenueFeesLabelDisplay";
             this.VenueFeesLabelDisplay.Size = new System.Drawing.Size(117, 28);
             this.VenueFeesLabelDisplay.TabIndex = 3;
@@ -588,7 +611,7 @@
             // 
             this.VenueSelectedLabelDisplay.AutoSize = true;
             this.VenueSelectedLabelDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.VenueSelectedLabelDisplay.Location = new System.Drawing.Point(143, 190);
+            this.VenueSelectedLabelDisplay.Location = new System.Drawing.Point(143, 178);
             this.VenueSelectedLabelDisplay.Name = "VenueSelectedLabelDisplay";
             this.VenueSelectedLabelDisplay.Size = new System.Drawing.Size(156, 28);
             this.VenueSelectedLabelDisplay.TabIndex = 2;
@@ -598,7 +621,7 @@
             // 
             this.layCourseSelectedLabelDispa.AutoSize = true;
             this.layCourseSelectedLabelDispa.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.layCourseSelectedLabelDispa.Location = new System.Drawing.Point(143, 92);
+            this.layCourseSelectedLabelDispa.Location = new System.Drawing.Point(143, 82);
             this.layCourseSelectedLabelDispa.Name = "layCourseSelectedLabelDispa";
             this.layCourseSelectedLabelDispa.Size = new System.Drawing.Size(162, 28);
             this.layCourseSelectedLabelDispa.TabIndex = 1;
@@ -608,7 +631,7 @@
             // 
             this.CourseFeesLabelDisplay.AutoSize = true;
             this.CourseFeesLabelDisplay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CourseFeesLabelDisplay.Location = new System.Drawing.Point(143, 141);
+            this.CourseFeesLabelDisplay.Location = new System.Drawing.Point(143, 130);
             this.CourseFeesLabelDisplay.Name = "CourseFeesLabelDisplay";
             this.CourseFeesLabelDisplay.Size = new System.Drawing.Size(123, 28);
             this.CourseFeesLabelDisplay.TabIndex = 0;
@@ -908,5 +931,7 @@
         private Panel ButtonPanels;
         private Label DiscountLabelInformation;
         private Label OptionalCostsDisplayLabel;
+        private TextBox PricePreDiscountTextBox;
+        private Label PriceSubTotalDiscount;
     }
 }

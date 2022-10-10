@@ -32,6 +32,8 @@ namespace L2P_LTD
         // generate quote for customers after options selected
         private void DisplayButton_Click(object sender, EventArgs e)
         {
+            // keyboard access for listbox
+            ListBoxCourse.Focus();
             // constant prices per night for venues
             const decimal KILLARNEYNIGHT = 149.99m;
             const decimal BELLMULLETNIGHT = 219.99m;
@@ -189,20 +191,24 @@ namespace L2P_LTD
                         // overall trip cost
                         TripCost = CourseFees + LodgingCost + OptionalCertCosts + SuiteFees;
 
-                        // apply discounts
+                        // apply discount
                         if (GuestCount >= 3 && SuiteSelected != STANDARDSUITE)
                         {
                             PriceReduction = TripCost * DISCOUNTRATE;
                             TripCost = TripCost - PriceReduction;
                         }
 
+                        // highlight cost before discount if it applies
+                        decimal CostBeforeDiscount = TripCost + PriceReduction;
+                        // populate text boxes
                         this.TextBoxGuestsDisplay.Text = GuestCount.ToString();
                         this.TextBoxCourseSelectedDisplay.Text = CourseSelected;
                         this.TextBoxCourseFeesDisplay.Text = CourseFees.ToString("C");
                         this.TextBoxVenueSelectedDisplay.Text = VenueSelected;
                         this.TextBoxVenueFeesDisplay.Text = LodgingCost.ToString("C");
                         this.TextBoxCertificateFeesDisplay.Text = OptionalsDisplay.ToString("C");
-                        this.TextBoxDiscountDisplay.Text = PriceReduction.ToString("C");
+                        this.PricePreDiscountTextBox.Text = CostBeforeDiscount.ToString("C");
+                        this.TextBoxDiscountDisplay.Text = "-" + PriceReduction.ToString("C");
                         this.TextBoxTotalBookingDisplay.Text = TripCost.ToString("C");
 
                         this.DisplayGroupBox.Visible = true;
@@ -304,8 +310,8 @@ namespace L2P_LTD
             this.DisplayGroupBox.Visible = false;
             // reset title of form
             this.Text = "L2P LTD. Programming Courses Ireland";
-            // focus on Display after resetting form for next booking
-            DisplayButton.Focus();
+            // focus on ListBox for keyboard navigation after resetting form for next booking
+            ListBoxCourse.Focus();
         }
         private void ExitButton_Click(object sender, EventArgs e)
         {
