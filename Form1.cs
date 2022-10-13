@@ -32,8 +32,6 @@ namespace L2P_LTD
         // generate quote for customers after options selected
         private void DisplayButton_Click(object sender, EventArgs e)
         {
-            // keyboard access for listbox
-            ListBoxCourse.Focus();
             // constant prices per night for venues
             const decimal KILLARNEYNIGHT = 149.99m;
             const decimal BELLMULLETNIGHT = 219.99m;
@@ -233,31 +231,26 @@ namespace L2P_LTD
         }
 
         // confirm booking of previous quote
-        // only confirmed if ok button is pressed
         private void BookButton_Click(object sender, EventArgs e)
         {
             // message box to confirm booking
-            var Confirm = MessageBox.Show("Confirmation of selected booking details:" +
+            MessageBox.Show("Confirmation of selected booking details:" +
                "\nThe Course Selected is: " + CourseSelected +
                "\nVenue Selected is: " + VenueSelected +
                "\nNumber of Attendees are: " + GuestCount.ToString() +
-               "\nBooking Cost is: " + TripCost.ToString("C"), "Confirm Booking?", MessageBoxButtons.OKCancel,
+               "\nBooking Cost is: " + TripCost.ToString("C"), "Booking Confirmation", MessageBoxButtons.OK,
                MessageBoxIcon.Information);
 
-            // If the OK button pressed
-            if (Confirm == DialogResult.OK)
-            {
-                // add summary stats
-                SummaryTransactionValue += TripCost;
-                SummaryLodgingValue += LodgingCost;
-                SummaryEnrollmentValue += CourseFees;
-                TotalOptionalCosts += OptionalCertCosts + SuiteFees;
-                TotalNumberBookings += 1;
+            // add summary stats
+            SummaryTransactionValue += TripCost;
+            SummaryLodgingValue += LodgingCost;
+            SummaryEnrollmentValue += CourseFees;
+            TotalOptionalCosts += OptionalCertCosts + SuiteFees;
+            TotalNumberBookings += 1;
 
-                if (PriceReduction > 0)
-                {
-                    TotalNumberBookingsDiscount += 1;
-                }
+            if (PriceReduction > 0)
+            {
+                TotalNumberBookingsDiscount += 1;
             }
             // change form header after message box cleared
             this.Text = "L2P LTD. Programming Courses Ireland";
